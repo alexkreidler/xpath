@@ -1,12 +1,17 @@
 {
   "name": "xpath-ts",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "DOM 3 XPath 1.0 implemention for browser and Node.js environment.",
   "author": {
     "name": "Cameron McCormack",
     "url": "https://mcc.id.au/"
   },
   "license": "MIT",
+  "keywords": [
+    "xpath",
+    "xml",
+    "dom"
+  ],
   "contributors": [
     {
       "name": "James Rishe"
