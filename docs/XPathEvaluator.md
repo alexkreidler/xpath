@@ -12,15 +12,15 @@ Each of these methods takes an optional `options` object, which can contain any 
 
 - `node` - the context node for evaluating the expression
 
-Example usage: 
+Example usage:
 
-```js
-var evaluator = xpath.parse('/characters/character[@greeting = $greeting]');
-var character = evaluator.select1({
-    node: myCharacterDoc,
-    variables: {
-        greeting: "Hello, I'm Harry, Harry Potter."
-    }
+```typescript
+const evaluator = xpath.parse('/characters/character[@greeting = $greeting]');
+const character = evaluator.select1({
+  node: myCharacterDoc,
+  variables: {
+    greeting: "Hello, I'm Harry, Harry Potter."
+  }
 });
 ```
 
@@ -56,7 +56,6 @@ This is only valid for expressions that evaluate to a node set.
 
 `select1([options])`
 
-Evaluates the XPath expression and the first node in the resulting node set, in document order. Returns `undefined` if the resulting node set is empty. 
+Evaluates the XPath expression and the first node in the resulting node set, in document order. Returns `undefined` if the resulting node set is empty.
 
 This is only valid for expressions that evaluate to a node set.
-

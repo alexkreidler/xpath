@@ -14,9 +14,10 @@ Evaluates an XPath expression and returns the result. The return value is determ
 - A number if the expression evaluates to a numeric value.
 - A string if the expression evaluates to a string.
 - If the expression evaluates to a nodeset:
+
   - An array of 0 or more nodes if `single` is unspecified or falsy
   - A single node (the first node in document order) or `undefined` if `single` is truthy
-  
+
 `node` is optional and if specified, is used as the context node for evaluating the expression. (It is necessary if the expression makes use of the current contex.)
 
 `single` is optional and is ignored if the expression evaluates to anything other than a nodeset.
@@ -33,7 +34,7 @@ Produces a function with the same signature as [`xpath.select()`](#xpathselectex
 
 Example usage:
 
-```js
-var expr = xpath.useNamespaces({ hp: 'http://www.example.com/harryPotter', bk: 'http://www.example.com/books' });
-var result = expr('/bk:books/bk:book[@name = "Harry Potter and the Half-Blood Prince"]/hp:characters', myBooks);
+```typescript
+const expr = xpath.useNamespaces({ hp: 'http://www.example.com/harryPotter', bk: 'http://www.example.com/books' });
+const result = expr('/bk:books/bk:book[@name = "Harry Potter and the Half-Blood Prince"]/hp:characters', myBooks);
 ```

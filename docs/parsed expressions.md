@@ -14,8 +14,6 @@ Parses the specified XPath expression and returns an `XPathEvaluator`. See the [
 
 Example usage:
 
-```js
-var evaluator = xpath.parse('/book/characters');
+```typescript
+const evaluator = xpath.parse('/book/characters');
 ```
-
-

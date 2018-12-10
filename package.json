@@ -1,38 +1,54 @@
 {
-  "name": "xpath",
-  "version": "0.0.27",
-  "description": "DOM 3 XPath implemention and helper for node.js.",
-  "engines": {
-    "node": ">=0.6.0"
-  },
+  "name": "xpath-ts",
+  "version": "1.0.0",
+  "description": "DOM 3 XPath 1.0 implemention for browser and Node.js environment.",
   "author": {
-    "name": "Cameron McCormack"
+    "name": "Cameron McCormack",
+    "url": "https://mcc.id.au/"
   },
+  "license": "MIT",
   "contributors": [
+    {
+      "name": "James Rishe"
+    },
+    {
+      "name": "Yaron Naveh",
+      "url": "http://webservices20.blogspot.com/"
+    },
     {
       "name": "goto100"
     },
     {
-      "name": "James Rishe"
+      "name": "Matus Zamborsky",
+      "email": "zamborsky@gmail.com",
+      "url": "https://github.com/backslash47"
     }
   ],
   "dependencies": {},
   "devDependencies": {
-    "nodeunit": ">=0.6.4",
-    "xmldom": "^0.1.19"
+    "@types/chai": "^4.1.7",
+    "@types/mocha": "^5.2.5",
+    "@types/node": "^10.12.0",
+    "@types/xmldom": "^0.1.27",
+    "chai": "^4.2.0",
+    "mocha": "^5.2.0",
+    "ts-node": "^7.0.1",
+    "tslint": "^5.11.0",
+    "tslint-eslint-rules": "^5.3.1",
+    "tslint-no-circular-imports": "^0.4.0",
+    "typescript": "^3.2.0",
+    "xmldom": "^0.1.27"
   },
-  "typings": "./xpath.d.ts",
+  "main": "./dist/index.js",
+  "types": "./types/index.d.ts",
   "scripts": {
-    "test": "./node_modules/.bin/nodeunit test.js"
+    "test": "mocha --require ts-node/register test/**/*.ts",
+    "lint": "tslint --project ./",
+    "build": "tsc",
+    "prepublishOnly": "npm run lint && npm run build && npm test"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/goto100/xpath.git"
-  },
-  "main": "./xpath.js",
-  "keywords": [
-    "xpath",
-    "xml"
-  ],
-  "license": "MIT"
+    "url": "git://github.com/backslash47/xpath-ts"
+  }
 }

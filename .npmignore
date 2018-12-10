@@ -1,3 +1,18 @@
-# .npmignore file
-tests/
-*.test.js
+node_modules/
+
+/docs/_build/
+
+# Logs
+*.log
+
+# Coverage
+/.nyc_output
+/coverage
+
+# IDE specific
+/.vscode/
+/.project/
+/.settings/
+
+/.DS_Store
+src/.DS_Store
