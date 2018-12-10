@@ -681,7 +681,6 @@ export class XPathContext {
     this.namespaceResolver = nr;
     this.functionResolver = fr;
     this.virtualRoot = null;
-    this.isHtml = false;
     this.contextSize = 0;
     this.contextPosition = 0;
   }

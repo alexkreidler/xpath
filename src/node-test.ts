@@ -13,7 +13,9 @@ export class NodeTest {
   static NODE = 6;
 
   static isNodeType(types: number[]) {
-    return (n: Node) => types.includes(n.nodeType);
+    return (n: Node) => {
+      return types.includes(n.nodeType) || ((n as Attr).specified && types.includes(2)); // DOM4 support
+    };
   }
 
   // create invariant node test for certain node types

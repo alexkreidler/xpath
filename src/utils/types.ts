@@ -3,7 +3,7 @@ export function isElement(e: Node | undefined | null): e is Element {
 }
 
 export function isAttribute(e: Node | undefined | null): e is Attr {
-  return e != null && e.nodeType === 2; // Node.ATTRIBUTE_NODE;
+  return e != null && (e.nodeType === 2 || (e as Attr).specified); // Node.ATTRIBUTE_NODE; // DOM4 support
 }
 
 export function isText(e: Node | undefined | null): e is Text {

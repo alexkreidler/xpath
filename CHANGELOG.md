@@ -3,6 +3,7 @@ Completely rewritten to TypeScript
 One monolith file divided into classes
 Test rewritten to Mocha + Chai
 Changed XPathResult.stringValue and other similar methods to getters for comformance with https://www.w3.org/TR/DOM-Level-3-XPath/xpath.html#XPathResult
+Add preliminary DOM4 support (JSdom implementation)
 
 Revision 20: April 26, 2011
 Fixed a typo resulting in FIRST_ORDERED_NODE_TYPE results being wrong,

@@ -18,10 +18,16 @@ Install with [npm](http://github.com/isaacs/npm):
 npm install xpath-ts
 ```
 
-This library is xml engine agnostic but I recommend to use [xmldom](https://github.com/jindw/xmldom):
+This library is xml engine agnostic but I recommend to use [xmldom](https://github.com/jindw/xmldom) or [jsdom](https://github.com/jsdom/jsdom)
 
 ```
 npm install xmldom
+```
+
+or
+
+```
+npm install jsdom
 ```
 
 ## API Documentation

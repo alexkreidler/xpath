@@ -1,6 +1,6 @@
 {
   "name": "xpath-ts",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "DOM 3 XPath 1.0 implemention for browser and Node.js environment.",
   "author": {
     "name": "Cameron McCormack",
@@ -32,10 +32,12 @@
   "dependencies": {},
   "devDependencies": {
     "@types/chai": "^4.1.7",
+    "@types/jsdom": "^12.2.0",
     "@types/mocha": "^5.2.5",
     "@types/node": "^10.12.0",
     "@types/xmldom": "^0.1.27",
     "chai": "^4.2.0",
+    "jsdom": "^13.0.0",
     "mocha": "^5.2.0",
     "ts-node": "^7.0.1",
     "tslint": "^5.11.0",
