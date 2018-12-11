@@ -3,9 +3,9 @@ import { isNSResolver } from './utils/types';
 import { XPathException } from './xpath-exception';
 import { XPathExpressionImpl } from './xpath-expression-impl';
 import { XPathNSResolverWrapper } from './xpath-ns-resolver-wrapper';
+import { XPathParser } from './xpath-parser';
 import { XPathResultImpl } from './xpath-result-impl';
 import { FunctionResolver, VariableResolver } from './xpath-types';
-import { XPathParser } from './xpath-parser';
 
 export function select(e: string, doc?: Node, single: boolean = false) {
   return selectWithResolver(e, doc, null, single);
