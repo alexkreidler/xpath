@@ -1,6 +1,6 @@
 # XPath library
 
-DOM 3 XPath 1.0 implemention for browser and Node.js environment with support for custom **Function**, **Variable** and **Namespace** mapping.
+DOM 3 and 4 XPath 1.0 implemention for browser and Node.js environment with support for custom **Function**, **Variable** and **Namespace** mapping.
 
 ## Requirements
 

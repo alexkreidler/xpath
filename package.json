@@ -1,7 +1,7 @@
 {
   "name": "xpath-ts",
-  "version": "1.1.1",
-  "description": "DOM 3 XPath 1.0 implemention for browser and Node.js environment.",
+  "version": "1.2.0",
+  "description": "DOM 3 and 4 XPath 1.0 implemention for browser and Node.js environment.",
   "author": {
     "name": "Cameron McCormack",
     "url": "https://mcc.id.au/"

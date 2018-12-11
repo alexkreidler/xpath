@@ -1,11 +1,11 @@
 import { FunctionResolverImpl } from './function-resolver';
+import { NamespaceResolverImpl } from './namespace-resolver';
 import { isDocument } from './utils/types';
 import { VariableResolverImpl } from './variable-resolver';
 import { XPath } from './xpath';
-import { XPathNSResolverWrapper } from './xpath-ns-resolver-wrapper';
 import { XPathParser } from './xpath-parser';
 import { XPathResultImpl } from './xpath-result-impl';
-import { XPathContext } from './xpath-types';
+import { FunctionResolver, NamespaceResolver, VariableResolver, XPathContext } from './xpath-types';
 
 export class XPathExpressionImpl implements XPathExpression {
   static getOwnerDocument(n: Node) {
@@ -33,13 +33,22 @@ export class XPathExpressionImpl implements XPathExpression {
   xpath: XPath;
   context: XPathContext;
 
-  constructor(e: string, r: XPathNSResolver | null, p: XPathParser) {
+  constructor(
+    e: string,
+    {
+      vr = new VariableResolverImpl(),
+      nr = new NamespaceResolverImpl(),
+      fr = new FunctionResolverImpl(),
+      p = new XPathParser()
+    }: {
+      vr?: VariableResolver;
+      nr?: NamespaceResolver;
+      fr?: FunctionResolver;
+      p?: XPathParser;
+    }
+  ) {
     this.xpath = p.parse(e);
-    this.context = new XPathContext(
-      new VariableResolverImpl(),
-      new XPathNSResolverWrapper(r),
-      new FunctionResolverImpl()
-    );
+    this.context = new XPathContext(vr, nr, fr);
   }
 
   evaluate(n: Node | undefined, t: number, _res: XPathResult | null) {

@@ -2,8 +2,10 @@ import { NodeXPathNSResolver } from './node-x-path-ns-resolver';
 import { isNSResolver } from './utils/types';
 import { XPathException } from './xpath-exception';
 import { XPathExpressionImpl } from './xpath-expression-impl';
-import { XPathParser } from './xpath-parser';
+import { XPathNSResolverWrapper } from './xpath-ns-resolver-wrapper';
 import { XPathResultImpl } from './xpath-result-impl';
+import { FunctionResolver, VariableResolver } from './xpath-types';
+import { XPathParser } from './xpath-parser';
 
 export function select(e: string, doc?: Node, single: boolean = false) {
   return selectWithResolver(e, doc, null, single);
@@ -39,7 +41,7 @@ export function evaluate(
   }
 
   resolver = convertNSResolver(resolver);
-  const ex = new XPathExpressionImpl(expression, resolver, new XPathParser());
+  const ex = new XPathExpressionImpl(expression, { nr: new XPathNSResolverWrapper(resolver) });
   return ex.evaluate(contextNode, type, result === undefined ? null : result);
 }
 
@@ -49,7 +51,7 @@ export function selectWithResolver(
   resolver: XPathNSResolver | null,
   single: boolean = false
 ) {
-  const expression = new XPathExpressionImpl(e, resolver, new XPathParser());
+  const expression = new XPathExpressionImpl(e, { nr: new XPathNSResolverWrapper(resolver) });
   const type = XPathResultImpl.ANY_TYPE;
 
   const evalResult = expression.evaluate(doc, type, null);
@@ -75,12 +77,15 @@ export function select1(e: string, doc?: Node) {
   return select(e, doc, true);
 }
 
-export function installDOM3XPathSupport(doc: Document, p: XPathParser = new XPathParser()): Document & XPathEvaluator {
+export function installXPathSupport(
+  doc: Document,
+  { fr, vr, p }: { fr?: FunctionResolver; vr?: VariableResolver; p?: XPathParser }
+): Document & XPathEvaluator {
   const evaluator = (doc as unknown) as XPathEvaluator;
 
   evaluator.createExpression = (e: string, r: XPathNSResolver | null) => {
     try {
-      return new XPathExpressionImpl(e, r, p);
+      return new XPathExpressionImpl(e, { fr, nr: new XPathNSResolverWrapper(r), vr, p });
     } catch (e) {
       throw new XPathException(XPathException.INVALID_EXPRESSION_ERR, e);
     }

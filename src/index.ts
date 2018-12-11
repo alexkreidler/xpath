@@ -12,6 +12,6 @@ export { VariableResolverImpl as VariableResolver } from './variable-resolver';
 
 export { Expression, XNodeSet, XBoolean, XString, XNumber, XPathContext } from './xpath-types';
 
-export { evaluate, select, useNamespaces, selectWithResolver, select1, installDOM3XPathSupport } from './api';
+export { evaluate, select, useNamespaces, selectWithResolver, select1, installXPathSupport } from './api';
 
-export { EvalOptions, parse } from './node-api';
+export { EvalOptions, parse } from './parse-api';
