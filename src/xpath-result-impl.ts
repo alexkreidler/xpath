@@ -94,8 +94,8 @@ export class XPathResultImpl implements XPathResult {
 
   iterateNext() {
     if (
-      this.resultType !== XPathResult.UNORDERED_NODE_ITERATOR_TYPE &&
-      this.resultType !== XPathResult.ORDERED_NODE_ITERATOR_TYPE
+      this.resultType !== XPathResultImpl.UNORDERED_NODE_ITERATOR_TYPE &&
+      this.resultType !== XPathResultImpl.ORDERED_NODE_ITERATOR_TYPE
     ) {
       throw new XPathException(XPathException.TYPE_ERR);
     }
@@ -104,8 +104,8 @@ export class XPathResultImpl implements XPathResult {
 
   snapshotItem(i: number) {
     if (
-      this.resultType !== XPathResult.UNORDERED_NODE_SNAPSHOT_TYPE &&
-      this.resultType !== XPathResult.ORDERED_NODE_SNAPSHOT_TYPE
+      this.resultType !== XPathResultImpl.UNORDERED_NODE_SNAPSHOT_TYPE &&
+      this.resultType !== XPathResultImpl.ORDERED_NODE_SNAPSHOT_TYPE
     ) {
       throw new XPathException(XPathException.TYPE_ERR);
     }

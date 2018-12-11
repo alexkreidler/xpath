@@ -1,6 +1,6 @@
 {
   "name": "xpath-ts",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "DOM 3 XPath 1.0 implemention for browser and Node.js environment.",
   "author": {
     "name": "Cameron McCormack",
