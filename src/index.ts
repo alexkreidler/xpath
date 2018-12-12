@@ -9,6 +9,7 @@ export { BarOperation } from './operations/bar-operation';
 export { NamespaceResolverImpl as NamespaceResolver } from './namespace-resolver';
 export { FunctionResolverImpl as FunctionResolver } from './function-resolver';
 export { VariableResolverImpl as VariableResolver } from './variable-resolver';
+export { XPathEvaluatorImpl as XPathEvaluator } from './xpath-evaluator';
 
 export { Expression, XNodeSet, XBoolean, XString, XNumber, XPathContext } from './xpath-types';
 
