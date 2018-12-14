@@ -14,9 +14,8 @@ export class NamespaceResolverImpl implements NamespaceResolver {
       n = n.documentElement;
     } else if (isAttribute(n)) {
       n = PathExpr.getOwnerElement(n);
-    } else if (isElement(n)) {
-      n = n.parentNode;
     }
+
     while (n != null && isElement(n)) {
       const nnm = n.attributes;
       for (let i = 0; i < nnm.length; i++) {
