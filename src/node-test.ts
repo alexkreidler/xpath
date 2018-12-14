@@ -46,7 +46,8 @@ export class NodeTest {
     const ns = xpc.namespaceResolver.getNamespace(prefix, xpc.expressionContextNode);
 
     if (ns == null) {
-      throw new Error('Cannot resolve QName ' + prefix);
+      // throw new Error('Cannot resolve QName ' + prefix);
+      return false;
     }
 
     return ns === nNamespace;
