@@ -31,7 +31,7 @@ function makeNSResolverFromMap(map: { [key: string]: string | null }) {
   });
 }
 
-function makeNSResolver(resolver: any) {
+export function makeNSResolver(resolver: any) {
   if (resolver && typeof resolver.getNamespace === 'function') {
     return makeNSResolverFromObject(resolver);
   }
@@ -106,7 +106,7 @@ function makeFunctionResolverFromMap(map: { [key: string]: FunctionType | undefi
   });
 }
 
-function makeFunctionResolver(resolver: any) {
+export function makeFunctionResolver(resolver: any) {
   if (resolver && typeof resolver.getFunction === 'function') {
     return makeFunctionResolverFromObject(resolver);
   }
@@ -132,7 +132,7 @@ function makeVariableResolverFromFunction(func: (n: string, ns: string) => any) 
   };
 }
 
-function makeVariableResolver(resolver: any) {
+export function makeVariableResolver(resolver: any) {
   if (resolver) {
     if (typeof resolver.getVariable === 'function') {
       return makeVariableResolverFromFunction(resolver.getVariable.bind(resolver));
