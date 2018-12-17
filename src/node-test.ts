@@ -43,7 +43,7 @@ export class NodeTest {
       return !nNamespace || (xpc.allowAnyNamespaceForNoPrefix && !NodeTest.hasPrefix(n));
     }
 
-    const ns = xpc.namespaceResolver.getNamespace(prefix, xpc.expressionContextNode);
+    const ns = xpc.namespaceResolver.getNamespace(prefix, n);
 
     if (ns == null) {
       // throw new Error('Cannot resolve QName ' + prefix);

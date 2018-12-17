@@ -4,11 +4,12 @@ import { XPathException } from './xpath-exception';
 import { XPathExpressionImpl } from './xpath-expression-impl';
 import { XPathNSResolverWrapper } from './xpath-ns-resolver-wrapper';
 import { XPathParser } from './xpath-parser';
-import { FunctionResolver, VariableResolver } from './xpath-types';
+import { FunctionResolver, NamespaceResolver, VariableResolver } from './xpath-types';
 
 export class XPathEvaluatorImpl implements XPathEvaluator {
   functionResolver?: FunctionResolver;
   variableResolver?: VariableResolver;
+  namespaceResolver?: NamespaceResolver;
   parser?: XPathParser;
 
   constructor({ fr, vr, p }: { fr?: FunctionResolver; vr?: VariableResolver; p?: XPathParser }) {
@@ -21,7 +22,7 @@ export class XPathEvaluatorImpl implements XPathEvaluator {
     try {
       return new XPathExpressionImpl(e, {
         fr: this.functionResolver,
-        nr: new XPathNSResolverWrapper(r),
+        nr: r == null ? this.namespaceResolver : new XPathNSResolverWrapper(r),
         vr: this.variableResolver,
         p: this.parser
       });
@@ -48,7 +49,9 @@ export class XPathEvaluatorImpl implements XPathEvaluator {
       };
     }
 
-    resolver = convertNSResolver(resolver);
+    if (resolver != null) {
+      resolver = convertNSResolver(resolver);
+    }
 
     const ex = this.createExpression(expression, resolver);
     return ex.evaluate(contextNode, type, result);

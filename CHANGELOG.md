@@ -1,3 +1,6 @@
+Revision 22: December 17, 2018
+Change default namespace handling for Xpath evaluator
+
 Revision 21: December 10, 2018
 Completely rewritten to TypeScript
 One monolith file divided into classes

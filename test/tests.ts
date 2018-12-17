@@ -107,6 +107,21 @@ export function executeTests(implName: string, dom: typeof DOMParser, useDom4: b
       expect(nodes2).to.have.length(2);
     });
 
+    it('select xpath with namespaces, with default resolver', () => {
+      const xml =
+        '<book xmlns:testns="http://example.com/test" xmlns:otherns="http://example.com/other"><otherns:title>Narnia</otherns:title><testns:title>Harry Potter</testns:title><testns:field testns:type="author">JKR</testns:field></book>';
+      const doc = new dom().parseFromString(xml, 'text/xml');
+
+      const evaluator = new xpath.XPathEvaluator({});
+      evaluator.createExpression('//testns:title/text()', null);
+
+      expect(asNodes(xpath.select('//testns:title/text()', doc))[0].nodeValue).to.equal('Harry Potter');
+      expect(asNodes(xpath.select('//testns:field[@testns:type="author"]/text()', doc))[0].nodeValue).to.equal('JKR');
+
+      const nodes2 = asNodes(xpath.select('/*/testns:*', doc));
+      expect(nodes2).to.have.length(2);
+    });
+
     it('select xpath with default namespace, using a resolver', () => {
       const xml =
         '<book xmlns="http://example.com/test"><title>Harry Potter</title><field type="author">JKR</field></book>';
