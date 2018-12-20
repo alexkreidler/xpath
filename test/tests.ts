@@ -1093,6 +1093,50 @@ export function executeTests(implName: string, dom: typeof DOMParser, useDom4: b
       expect(last).to.have.length(1);
       expect(last[0].textContent).to.equal('Hermione');
     });
+
+    it('id string function', () => {
+      const xmlString =
+        '<body>' +
+        '<div id="test1" />' +
+        '<div id="testid">test1</div>' +
+        '<a id="jshref" href="javascript:doFoo(\'a\', \'b\')">' +
+        '   javascript href with spaces' +
+        ' </a>' +
+        ' <span id="u1" class="u" />' +
+        ' <span id="u2" class="u" />' +
+        ' <span id="u3" class="u" />' +
+        ' <span style="visibility: visible">do not squint!</span>' +
+        '</body>';
+
+      const ex = "count(id('testid'))";
+      const xml = new dom().parseFromString(xmlString, 'text/xml');
+
+      const result = xpath.evaluate(ex, xml);
+
+      expect(result.numberValue).to.equal(1);
+    });
+
+    it('id node-set function', () => {
+      const xmlString =
+        '<body>' +
+        '<div id="test1" />' +
+        '<div id="testid">test1</div>' +
+        '<a id="jshref" href="javascript:doFoo(\'a\', \'b\')">' +
+        '   javascript href with spaces' +
+        ' </a>' +
+        ' <span id="u1" class="u" />' +
+        ' <span id="u2" class="u" />' +
+        ' <span id="u3" class="u" />' +
+        ' <span style="visibility: visible">do not squint!</span>' +
+        '</body>';
+
+      const ex = "count(id(//*[@id='testid']))";
+      const xml = new dom().parseFromString(xmlString, 'text/xml');
+
+      const result = xpath.evaluate(ex, xml);
+
+      expect(result.numberValue).to.equal(1);
+    });
   });
 }
 

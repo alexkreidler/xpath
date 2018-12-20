@@ -33,13 +33,16 @@ export class Functions {
     checkArguments(1, args, 'id');
 
     const eRes: Expression = args[0].evaluate(c);
-    let id: string;
+
+    let ids: string[];
+
     if (eRes instanceof XNodeSet) {
-      id = eRes.toArray().join(' ');
+      ids = eRes.toArray().map((node) => XNodeSet.prototype.stringForNode(node));
     } else {
-      id = eRes.stringValue;
+      const id = eRes.stringValue;
+      ids = id.split(/[\x0d\x0a\x09\x20]+/);
     }
-    const ids = id.split(/[\x0d\x0a\x09\x20]+/);
+
     const ns = new XNodeSet();
     const doc = isDocument(c.contextNode) ? c.contextNode : c.contextNode.ownerDocument!;
 
