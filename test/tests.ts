@@ -1137,6 +1137,65 @@ export function executeTests(implName: string, dom: typeof DOMParser, useDom4: b
 
       expect(result.numberValue).to.equal(1);
     });
+
+    describe('Axis tests', () => {
+      const xmlString = [
+        '<page>',
+        ' <p></p>',
+        ' <list id="parent">',
+        '  <item></item>',
+        '  <item id="self"><d><d></d></d></item>',
+        '  <item></item>',
+        '  <item></item>',
+        '  <item></item>',
+        ' </list>',
+        ' <f></f>',
+        '</page>'
+      ].join('');
+      const xml = new dom().parseFromString(xmlString, 'text/xml');
+
+      it('following', () => {
+        const ex = "count(//*[@id='self']/following::*)";
+
+        const result = xpath.evaluate(ex, xml);
+        expect(result.numberValue).to.equal(4);
+      });
+
+      it('following sibling', () => {
+        const ex = "count(//*[@id='self']/following-sibling::*)";
+
+        const result = xpath.evaluate(ex, xml);
+        expect(result.numberValue).to.equal(3);
+      });
+
+      it('following sibling 2', () => {
+        const ex = "count(//*[@id='self']/@*/following-sibling::*)";
+
+        const result = xpath.evaluate(ex, xml);
+        expect(result.numberValue).to.equal(0);
+      });
+
+      it('proceeding', () => {
+        const ex = "count(//*[@id='self']/preceding::*)";
+
+        const result = xpath.evaluate(ex, xml);
+        expect(result.numberValue).to.equal(2);
+      });
+
+      it('proceeding sibling', () => {
+        const ex = "count(//*[@id='self']/preceding-sibling::*)";
+
+        const result = xpath.evaluate(ex, xml);
+        expect(result.numberValue).to.equal(1);
+      });
+
+      it('proceeding sibling 2', () => {
+        const ex = "count(//*[@id='self']/@*/preceding-sibling::*)";
+
+        const result = xpath.evaluate(ex, xml);
+        expect(result.numberValue).to.equal(0);
+      });
+    });
   });
 }
 

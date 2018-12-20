@@ -131,32 +131,15 @@ export class PathExpr extends Expression {
         if (xpc.contextNode === xpc.virtualRoot) {
           break;
         }
-        const st: Array<Node | null> = [];
-        if (xpc.contextNode.firstChild != null) {
-          st.unshift(xpc.contextNode.firstChild);
-        } else {
-          st.unshift(xpc.contextNode.nextSibling);
-        }
-        for (
-          let m = xpc.contextNode.parentNode;
-          m != null && isDocument(m) && m !== xpc.virtualRoot;
-          m = m.parentNode
-        ) {
-          st.unshift(m.nextSibling);
-        }
-        do {
-          for (let m = st.pop(); m != null; ) {
+
+        for (let n: Node | null = xpc.contextNode; n != null; n = n.parentNode) {
+          for (let m: Node | null = n.nextSibling; m != null; m = m.nextSibling) {
             if (step.nodeTest.matches(m, xpc)) {
               newNodes.push(m);
             }
-            if (m.firstChild != null) {
-              st.push(m.nextSibling);
-              m = m.firstChild;
-            } else {
-              m = m.nextSibling;
-            }
           }
-        } while (st.length > 0);
+        }
+
         break;
       }
       case Step.FOLLOWINGSIBLING: {
@@ -217,29 +200,18 @@ export class PathExpr extends Expression {
         break;
       }
       case Step.PRECEDING: {
-        let st: Array<Node | null>;
-        if (xpc.virtualRoot != null) {
-          st = [xpc.virtualRoot];
-        } else {
-          // cannot rely on .ownerDocument because the node may be in a document fragment
-          st = [findRoot(xpc.contextNode)];
+        if (xpc.contextNode === xpc.virtualRoot) {
+          break;
         }
-        outer: while (st.length > 0) {
-          for (let m = st.pop(); m != null; ) {
-            if (m === xpc.contextNode) {
-              break outer;
-            }
+
+        for (let n: Node | null = xpc.contextNode; n != null; n = n.parentNode) {
+          for (let m: Node | null = n.previousSibling; m != null; m = m.previousSibling) {
             if (step.nodeTest.matches(m, xpc)) {
-              newNodes.unshift(m);
-            }
-            if (m.firstChild != null) {
-              st.push(m.nextSibling);
-              m = m.firstChild;
-            } else {
-              m = m.nextSibling;
+              newNodes.push(m);
             }
           }
         }
+
         break;
       }
       case Step.PRECEDINGSIBLING: {
@@ -395,15 +367,4 @@ export class PathExpr extends Expression {
       return '<Empty PathExpr>';
     }
   }
-}
-
-/**
- * Returns the topmost node of the tree containing node
- */
-function findRoot(node: Node) {
-  while (node && node.parentNode) {
-    node = node.parentNode;
-  }
-
-  return node;
 }
