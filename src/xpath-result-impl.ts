@@ -99,6 +99,11 @@ export class XPathResultImpl implements XPathResult {
     ) {
       throw new XPathException(XPathException.TYPE_ERR);
     }
+
+    if (this.iteratorIndex === this.nodes.length - 1) {
+      this.invalidIteratorState = true;
+    }
+
     return this.nodes[this.iteratorIndex++];
   }
 
