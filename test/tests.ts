@@ -1195,6 +1195,27 @@ export function executeTests(implName: string, dom: typeof DOMParser, useDom4: b
         const result = xpath.evaluate(ex, xml);
         expect(result.numberValue).to.equal(0);
       });
+
+      it('parent', () => {
+        const ex = "//*[@id='self']/parent::*/@id";
+
+        const result = xpath.evaluate(ex, xml);
+        expect(result.stringValue).to.equal('parent');
+      });
+
+      it('parent2', () => {
+        const ex = 'count(/parent::*)';
+
+        const result = xpath.evaluate(ex, xml);
+        expect(result.numberValue).to.equal(0);
+      });
+
+      it('self', () => {
+        const ex = "//*[@id='self']/self::*/@id";
+
+        const result = xpath.evaluate(ex, xml);
+        expect(result.stringValue).to.equal('self');
+      });
     });
   });
 }

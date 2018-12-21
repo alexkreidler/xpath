@@ -51,11 +51,17 @@ export class XPathResultImpl implements XPathResult {
     switch (t) {
       case XPathResultImpl.NUMBER_TYPE:
         this.numberValue = v.numberValue;
+        this.stringValue = v.stringValue;
+        this.booleanValue = v.booleanValue;
         return;
       case XPathResultImpl.STRING_TYPE:
+        this.numberValue = v.numberValue;
         this.stringValue = v.stringValue;
+        this.booleanValue = v.booleanValue;
         return;
       case XPathResultImpl.BOOLEAN_TYPE:
+        this.numberValue = v.numberValue;
+        this.stringValue = v.stringValue;
         this.booleanValue = v.booleanValue;
         return;
       case XPathResultImpl.ANY_UNORDERED_NODE_TYPE:
@@ -68,6 +74,9 @@ export class XPathResultImpl implements XPathResult {
           }
 
           this.singleNodeValue = first;
+          this.numberValue = v.numberValue;
+          this.stringValue = v.stringValue;
+          this.booleanValue = v.booleanValue;
           return;
         }
         break;
@@ -77,6 +86,9 @@ export class XPathResultImpl implements XPathResult {
           this.invalidIteratorState = false;
           this.nodes = v.toArray();
           this.iteratorIndex = 0;
+          this.numberValue = v.numberValue;
+          this.stringValue = v.stringValue;
+          this.booleanValue = v.booleanValue;
           return;
         }
         break;
@@ -85,6 +97,9 @@ export class XPathResultImpl implements XPathResult {
         if (v instanceof XNodeSet) {
           this.nodes = v.toArray();
           this.snapshotLength = this.nodes.length;
+          this.numberValue = v.numberValue;
+          this.stringValue = v.stringValue;
+          this.booleanValue = v.booleanValue;
           return;
         }
         break;
