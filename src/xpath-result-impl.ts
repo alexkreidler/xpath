@@ -69,14 +69,12 @@ export class XPathResultImpl implements XPathResult {
         if (v instanceof XNodeSet) {
           const first = v.first();
 
-          if (first === null) {
-            throw new XPathException(XPathException.TYPE_ERR);
-          }
-
-          this.singleNodeValue = first;
+          this.singleNodeValue = first as never;
           this.numberValue = v.numberValue;
           this.stringValue = v.stringValue;
           this.booleanValue = v.booleanValue;
+          this.nodes = first != null ? [first] : [];
+
           return;
         }
         break;
@@ -115,8 +113,8 @@ export class XPathResultImpl implements XPathResult {
       throw new XPathException(XPathException.TYPE_ERR);
     }
 
-    if (this.iteratorIndex === this.nodes.length - 1) {
-      this.invalidIteratorState = true;
+    if (this.iteratorIndex === this.nodes.length) {
+      return null as never;
     }
 
     return this.nodes[this.iteratorIndex++];
