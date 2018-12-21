@@ -128,7 +128,7 @@ function nodeOrder(n1: Node, n2: Node) {
     return 0;
   }
 
-  if (n1.compareDocumentPosition) {
+  if (n1.compareDocumentPosition !== undefined && n2.compareDocumentPosition !== undefined) {
     const cpos = n1.compareDocumentPosition(n2);
 
     if (cpos & 0x01) {
