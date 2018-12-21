@@ -30,7 +30,7 @@ export class XPathEvaluatorImpl implements XPathEvaluator {
       throw new XPathException(XPathException.INVALID_EXPRESSION_ERR, e);
     }
   }
-  createNSResolver(n: Node) {
+  createNSResolver(n?: Node) {
     return new NodeXPathNSResolver(n);
   }
   evaluate(
