@@ -15,4 +15,11 @@ export { Expression, XNodeSet, XBoolean, XString, XNumber, XPathContext } from '
 
 export { evaluate, select, useNamespaces, selectWithResolver, select1, installXPathSupport } from './api';
 
-export { EvalOptions, makeFunctionResolver, makeNSResolver, makeVariableResolver, parse } from './parse-api';
+export {
+  convertValue,
+  EvalOptions,
+  makeFunctionResolver,
+  makeNSResolver,
+  makeVariableResolver,
+  parse
+} from './parse-api';

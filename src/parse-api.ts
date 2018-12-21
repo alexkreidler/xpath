@@ -49,7 +49,7 @@ export function makeNSResolver(resolver: any) {
 }
 
 /** Converts native JavaScript types to their XPath library equivalent */
-function convertValue(value: any) {
+export function convertValue(value: any) {
   if (value == null) {
     return null;
   }
