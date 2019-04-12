@@ -4,7 +4,7 @@ DOM 3 and 4 XPath 1.0 implemention for browser and Node.js environment with supp
 
 ## Requirements
 
-- [Node v10.x or greater](https://nodejs.org/en/download/)
+- [Node v11.x or greater](https://nodejs.org/en/download/)
 
 ## Release Notes
 
