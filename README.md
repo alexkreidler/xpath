@@ -18,7 +18,7 @@ Install with [npm](http://github.com/isaacs/npm):
 npm install xpath-ts
 ```
 
-This library is xml engine agnostic but I recommend to use [xmldom](https://github.com/jindw/xmldom) or [jsdom](https://github.com/jsdom/jsdom)
+This library is xml engine agnostic but I recommend to use [xmldom-ts](https://github.com/backslash47/xmldom), [xmldom](https://github.com/jindw/xmldom) or [jsdom](https://github.com/jsdom/jsdom)
 
 ```
 npm install xmldom
@@ -208,7 +208,7 @@ npm install
 npm run build
 ```
 
-You will get the transpiled code under '/dist' and typings under '/types'.
+You will get the transpiled code under '/dist/lib' and typings under '/dist/types'.
 
 #### Test
 
