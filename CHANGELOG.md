@@ -1,3 +1,6 @@
+Revision 23: May 24, 2019
+Switched to XMLDOM-TS as test implementation
+
 Revision 22: December 17, 2018
 Change default namespace handling for Xpath evaluator
 

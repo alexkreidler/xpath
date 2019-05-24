@@ -1,4 +1,4 @@
-import { DOMParser } from 'xmldom';
+import { DOMParserImpl } from 'xmldom-ts';
 import { executeTests } from './tests';
 
-executeTests('xmldom', DOMParser, false);
+executeTests('xmldom', DOMParserImpl, false);

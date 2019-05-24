@@ -129,22 +129,26 @@ function nodeOrder(n1: Node, n2: Node) {
   }
 
   if (n1.compareDocumentPosition !== undefined && n2.compareDocumentPosition !== undefined) {
-    const cpos = n1.compareDocumentPosition(n2);
+    try {
+      const cpos = n1.compareDocumentPosition(n2);
 
-    if (cpos & 0x01) {
-      // not in the same document; return an arbitrary result (is there a better way to do this)
-      return 1;
-    }
-    if (cpos & 0x0a) {
-      // n2 precedes or contains n1
-      return 1;
-    }
-    if (cpos & 0x14) {
-      // n2 follows or is contained by n1
-      return -1;
-    }
+      if (cpos & 0x01) {
+        // not in the same document; return an arbitrary result (is there a better way to do this)
+        return 1;
+      }
+      if (cpos & 0x0a) {
+        // n2 precedes or contains n1
+        return 1;
+      }
+      if (cpos & 0x14) {
+        // n2 follows or is contained by n1
+        return -1;
+      }
 
-    return 0;
+      return 0;
+    } catch (_e) {
+      // if compareDocumentPosition exists but is not supported ignore error
+    }
   }
 
   let d1 = 0;

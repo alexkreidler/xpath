@@ -37,7 +37,7 @@ Can be found [here](https://github.com/backslash47/backslash47/blob/master/docs/
 ## Your first xpath:
 
 ```typescript
-import { DOMParser as dom } from 'xmldom';
+import { DOMParserImpl as dom } from 'xmldom-ts';
 import * as xpath from 'xpath-ts';
 
 const xml = '<book><title>Harry Potter</title></book>';
@@ -60,7 +60,7 @@ Node: <title>Harry Potter</title>
 Using the same interface you have on modern browsers ([MDN])
 
 ```typescript
-import { DOMParser as dom } from 'xmldom';
+import { DOMParserImpl as dom } from 'xmldom-ts';
 import * as xpath from 'xpath-ts';
 
 const xml = "<book author='J. K. Rowling'><title>Harry Potter</title></book>";
@@ -95,7 +95,7 @@ Node: <title>Harry Potter</title>
 ## Evaluate string values directly:
 
 ```typescript
-import { DOMParser as dom } from 'xmldom';
+import { DOMParserImpl as dom } from 'xmldom-ts';
 import * as xpath from 'xpath-ts';
 
 const xml = '<book><title>Harry Potter</title></book>';
@@ -114,7 +114,7 @@ Harry Potter
 ## Namespaces
 
 ```typescript
-import { DOMParser as dom } from 'xmldom';
+import { DOMParserImpl as dom } from 'xmldom-ts';
 import * as xpath from 'xpath-ts';
 
 const xml = "<book><title xmlns='myns'>Harry Potter</title></book>";
@@ -133,7 +133,7 @@ myns
 ## Namespaces with easy mappings
 
 ```typescript
-import { DOMParser as dom } from 'xmldom';
+import { DOMParserImpl as dom } from 'xmldom-ts';
 import * as xpath from 'xpath-ts';
 
 const xml = "<book xmlns:bookml='http://example.com/book'><bookml:title>Harry Potter</bookml:title></book>";
@@ -151,7 +151,7 @@ Harry Potter
 ## Default namespace with mapping
 
 ```typescript
-import { DOMParser as dom } from 'xmldom';
+import { DOMParserImpl as dom } from 'xmldom-ts';
 import * as xpath from 'xpath-ts';
 
 const xml = "<book xmlns='http://example.com/book'><title>Harry Potter</title></book>";
@@ -169,7 +169,7 @@ Harry Potter
 ## Attributes
 
 ```typescript
-import { DOMParser as dom } from 'xmldom';
+import { DOMParserImpl as dom } from 'xmldom-ts';
 import * as xpath from 'xpath-ts';
 
 const xml = "<book author='J. K. Rowling'><title>Harry Potter</title></book>";
