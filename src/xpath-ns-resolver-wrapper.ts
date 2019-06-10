@@ -1,8 +1,14 @@
+import { isNSResolver } from './utils/types';
+
 export class XPathNSResolverWrapper {
-  xpathNSResolver: XPathNSResolver | null;
+  xpathNSResolver: { lookupNamespaceURI(prefix: string | null): string | null; } | null;
 
   constructor(r: XPathNSResolver | null) {
-    this.xpathNSResolver = r;
+    if (!isNSResolver(r)) {
+      this.xpathNSResolver = null;
+    } else {
+      this.xpathNSResolver = r as { lookupNamespaceURI(prefix: string | null): string | null; };
+    }
   }
 
   getNamespace(prefix: string, _n: Node) {

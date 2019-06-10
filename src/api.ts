@@ -51,7 +51,7 @@ export function selectWithResolver(
 export function evaluate(
   expression: string,
   contextNode?: Node,
-  resolver?: XPathNSResolver | ((prefix: string) => string | null) | null,
+  resolver?: XPathNSResolver | null,
   type: number = 0,
   result?: XPathResult | null
 ) {

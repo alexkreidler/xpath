@@ -36,7 +36,7 @@ export class XPathEvaluatorImpl implements XPathEvaluator {
   evaluate(
     expression: string,
     contextNode: Node,
-    resolver: XPathNSResolver | ((prefix: string) => string | null) | null,
+    resolver: XPathNSResolver | null,
     type: number,
     result: XPathResult | null
   ) {
@@ -58,7 +58,7 @@ export class XPathEvaluatorImpl implements XPathEvaluator {
   }
 }
 
-function convertNSResolver(resolver: XPathNSResolver | ((prefix: string) => string | null) | null | undefined) {
+function convertNSResolver(resolver: XPathNSResolver | null | undefined) {
   if (resolver == null) {
     return {
       lookupNamespaceURI(_prefix: string): null {
@@ -66,7 +66,7 @@ function convertNSResolver(resolver: XPathNSResolver | ((prefix: string) => stri
       }
     };
   } else if (!isNSResolver(resolver)) {
-    const pr = resolver;
+    const pr: ((prefix: string | null) => string | null) = resolver;
     return {
       lookupNamespaceURI(prefix: string): string | null {
         return pr(prefix);
