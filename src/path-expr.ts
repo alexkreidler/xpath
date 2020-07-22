@@ -178,7 +178,7 @@ export class PathExpr extends Expression {
           // tslint:disable-next-line:forin
           for (const pre in n) {
             const nsn = new XPathNamespace(pre, n[pre], xpc.contextNode);
-            if (step.nodeTest.matches(nsn, xpc)) {
+            if (step.nodeTest.matches(nsn as Node, xpc)) {
               newNodes.push(nsn);
             }
           }
