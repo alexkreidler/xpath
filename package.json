@@ -48,6 +48,7 @@
   "main": "./dist/lib/index.js",
   "types": "./dist/types/index.d.ts",
   "scripts": {
+    "api-docs": "typedoc -out api-docs --mode file",
     "test": "mocha --require ts-node/register test/**/*.ts",
     "lint": "tslint --project ./",
     "build": "tsc",

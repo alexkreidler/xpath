@@ -1,0 +1,588 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>xpath-ts</title>
+	<meta name="description" content="Documentation for xpath-ts">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="assets/js/search.json" data-base=".">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="index.html" class="title">xpath-ts</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+							<input type="checkbox" id="tsd-filter-only-exported" />
+							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="globals.html">Globals</a>
+				</li>
+			</ul>
+			<h1>xpath-ts</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<div class="tsd-panel tsd-typography">
+				<a href="#xpath-library" id="xpath-library" style="color: inherit; text-decoration: none;">
+					<h1>XPath library</h1>
+				</a>
+				<p>DOM 3 and 4 XPath 1.0 implemention for browser and Node.js environment with support for custom <strong>Function</strong>, <strong>Variable</strong> and <strong>Namespace</strong> mapping.</p>
+				<a href="#requirements" id="requirements" style="color: inherit; text-decoration: none;">
+					<h2>Requirements</h2>
+				</a>
+				<ul>
+					<li><a href="https://nodejs.org/en/download/">Node v11.x or greater</a></li>
+				</ul>
+				<a href="#release-notes" id="release-notes" style="color: inherit; text-decoration: none;">
+					<h2>Release Notes</h2>
+				</a>
+				<p>See <a href="CHANGELOG.md">CHANGELOG.md</a></p>
+				<a href="#usage" id="usage" style="color: inherit; text-decoration: none;">
+					<h2>Usage</h2>
+				</a>
+				<p>Install with <a href="http://github.com/isaacs/npm">npm</a>:</p>
+				<pre><code>npm <span class="hljs-keyword">install</span> xpath-ts</code></pre><p>This library is xml engine agnostic but I recommend to use <a href="https://github.com/backslash47/xmldom">xmldom-ts</a>, <a href="https://github.com/jindw/xmldom">xmldom</a> or <a href="https://github.com/jsdom/jsdom">jsdom</a></p>
+				<pre><code>npm <span class="hljs-keyword">install</span> xmldom-ts</code></pre><p>or </p>
+				<pre><code>npm <span class="hljs-keyword">install</span> xmldom</code></pre><p>or</p>
+				<pre><code>npm <span class="hljs-keyword">install</span> jsdom</code></pre>
+				<a href="#api-documentation" id="api-documentation" style="color: inherit; text-decoration: none;">
+					<h2>API Documentation</h2>
+				</a>
+				<p>Can be found <a href="https://github.com/backslash47/backslash47/blob/master/docs/xpath%20methods.md">here</a>. See below for example usage.</p>
+				<a href="#your-first-xpath" id="your-first-xpath" style="color: inherit; text-decoration: none;">
+					<h2>Your first xpath:</h2>
+				</a>
+				<pre><code class="language-typescript"><span class="hljs-keyword">import</span> { DOMParserImpl <span class="hljs-keyword">as</span> dom } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;xmldom-ts&#x27;</span>;
+<span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> xpath <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;xpath-ts&#x27;</span>;
+
+<span class="hljs-keyword">const</span> xml = <span class="hljs-string">&#x27;&lt;book&gt;&lt;title&gt;Harry Potter&lt;/title&gt;&lt;/book&gt;&#x27;</span>;
+<span class="hljs-keyword">const</span> doc = <span class="hljs-keyword">new</span> dom().parseFromString(xml);
+<span class="hljs-keyword">const</span> nodes = xpath.select(<span class="hljs-string">&#x27;//title&#x27;</span>, doc);
+
+<span class="hljs-built_in">console</span>.log(nodes[<span class="hljs-number">0</span>].localName + <span class="hljs-string">&#x27;: &#x27;</span> + nodes[<span class="hljs-number">0</span>].firstChild.data);
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;Node: &#x27;</span> + nodes[<span class="hljs-number">0</span>].toString());</code></pre>
+				<p>➡</p>
+				<pre><code>title: Harry Potter
+<span class="hljs-keyword">Node</span><span class="hljs-title">: &lt;title</span>&gt;Harry Potter<span class="hljs-tag">&lt;/title&gt;</span></code></pre>
+				<a href="#alternatively" id="alternatively" style="color: inherit; text-decoration: none;">
+					<h3>Alternatively</h3>
+				</a>
+				<p>Using the same interface you have on modern browsers (<a href="https://developer.mozilla.org/en/docs/Web/API/Document/evaluate">MDN</a>)</p>
+				<pre><code class="language-typescript"><span class="hljs-keyword">import</span> { DOMParserImpl <span class="hljs-keyword">as</span> dom } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;xmldom-ts&#x27;</span>;
+<span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> xpath <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;xpath-ts&#x27;</span>;
+
+<span class="hljs-keyword">const</span> xml = <span class="hljs-string">&quot;&lt;book author=&#x27;J. K. Rowling&#x27;&gt;&lt;title&gt;Harry Potter&lt;/title&gt;&lt;/book&gt;&quot;</span>;
+<span class="hljs-keyword">const</span> doc = <span class="hljs-keyword">new</span> dom().parseFromString(xml);
+
+xpath.installDOM3XPathSupport(doc);
+
+<span class="hljs-keyword">const</span> result = doc.evaluate(
+  <span class="hljs-string">&#x27;/book/title&#x27;</span>, <span class="hljs-comment">// xpathExpression</span>
+  doc, <span class="hljs-comment">// contextNode</span>
+  <span class="hljs-literal">null</span>, <span class="hljs-comment">// namespaceResolver</span>
+  xpath.XPathResult.ANY_TYPE, <span class="hljs-comment">// resultType</span>
+  <span class="hljs-literal">null</span> <span class="hljs-comment">// result</span>
+);
+
+<span class="hljs-keyword">let</span> node = result.iterateNext();
+<span class="hljs-keyword">while</span> (node) {
+  <span class="hljs-built_in">console</span>.log(node.localName + <span class="hljs-string">&#x27;: &#x27;</span> + node.firstChild.data);
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&#x27;Node: &#x27;</span> + node.toString());
+
+  node = result.iterateNext();
+}</code></pre>
+				<p>➡</p>
+				<pre><code>title: Harry Potter
+<span class="hljs-keyword">Node</span><span class="hljs-title">: &lt;title</span>&gt;Harry Potter<span class="hljs-tag">&lt;/title&gt;</span></code></pre>
+				<a href="#evaluate-string-values-directly" id="evaluate-string-values-directly" style="color: inherit; text-decoration: none;">
+					<h2>Evaluate string values directly:</h2>
+				</a>
+				<pre><code class="language-typescript"><span class="hljs-keyword">import</span> { DOMParserImpl <span class="hljs-keyword">as</span> dom } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;xmldom-ts&#x27;</span>;
+<span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> xpath <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;xpath-ts&#x27;</span>;
+
+<span class="hljs-keyword">const</span> xml = <span class="hljs-string">&#x27;&lt;book&gt;&lt;title&gt;Harry Potter&lt;/title&gt;&lt;/book&gt;&#x27;</span>;
+<span class="hljs-keyword">const</span> doc = <span class="hljs-keyword">new</span> dom().parseFromString(xml);
+<span class="hljs-keyword">const</span> title = xpath.select(<span class="hljs-string">&#x27;string(//title)&#x27;</span>, doc);
+
+<span class="hljs-built_in">console</span>.log(title);</code></pre>
+				<p>➡</p>
+				<pre><code><span class="hljs-attribute">Harry Potter</span></code></pre>
+				<a href="#namespaces" id="namespaces" style="color: inherit; text-decoration: none;">
+					<h2>Namespaces</h2>
+				</a>
+				<pre><code class="language-typescript"><span class="hljs-keyword">import</span> { DOMParserImpl <span class="hljs-keyword">as</span> dom } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;xmldom-ts&#x27;</span>;
+<span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> xpath <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;xpath-ts&#x27;</span>;
+
+<span class="hljs-keyword">const</span> xml = <span class="hljs-string">&quot;&lt;book&gt;&lt;title xmlns=&#x27;myns&#x27;&gt;Harry Potter&lt;/title&gt;&lt;/book&gt;&quot;</span>;
+<span class="hljs-keyword">const</span> doc = <span class="hljs-keyword">new</span> dom().parseFromString(xml);
+<span class="hljs-keyword">const</span> node = xpath.select(<span class="hljs-string">&quot;//*[local-name(.)=&#x27;title&#x27; and namespace-uri(.)=&#x27;myns&#x27;]&quot;</span>, doc)[<span class="hljs-number">0</span>];
+
+<span class="hljs-built_in">console</span>.log(node.namespaceURI);</code></pre>
+				<p>➡</p>
+				<pre><code><span class="hljs-attribute">myns</span></code></pre>
+				<a href="#namespaces-with-easy-mappings" id="namespaces-with-easy-mappings" style="color: inherit; text-decoration: none;">
+					<h2>Namespaces with easy mappings</h2>
+				</a>
+				<pre><code class="language-typescript"><span class="hljs-keyword">import</span> { DOMParserImpl <span class="hljs-keyword">as</span> dom } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;xmldom-ts&#x27;</span>;
+<span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> xpath <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;xpath-ts&#x27;</span>;
+
+<span class="hljs-keyword">const</span> xml = <span class="hljs-string">&quot;&lt;book xmlns:bookml=&#x27;http://example.com/book&#x27;&gt;&lt;bookml:title&gt;Harry Potter&lt;/bookml:title&gt;&lt;/book&gt;&quot;</span>;
+<span class="hljs-keyword">const</span> select = xpath.useNamespaces({ bookml: <span class="hljs-string">&#x27;http://example.com/book&#x27;</span> });
+
+<span class="hljs-built_in">console</span>.log(select(<span class="hljs-string">&#x27;//bookml:title/text()&#x27;</span>, doc)[<span class="hljs-number">0</span>].nodeValue);</code></pre>
+				<p>➡</p>
+				<pre><code><span class="hljs-attribute">Harry Potter</span></code></pre>
+				<a href="#default-namespace-with-mapping" id="default-namespace-with-mapping" style="color: inherit; text-decoration: none;">
+					<h2>Default namespace with mapping</h2>
+				</a>
+				<pre><code class="language-typescript"><span class="hljs-keyword">import</span> { DOMParserImpl <span class="hljs-keyword">as</span> dom } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;xmldom-ts&#x27;</span>;
+<span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> xpath <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;xpath-ts&#x27;</span>;
+
+<span class="hljs-keyword">const</span> xml = <span class="hljs-string">&quot;&lt;book xmlns=&#x27;http://example.com/book&#x27;&gt;&lt;title&gt;Harry Potter&lt;/title&gt;&lt;/book&gt;&quot;</span>;
+<span class="hljs-keyword">const</span> select = xpath.useNamespaces({ bookml: <span class="hljs-string">&#x27;http://example.com/book&#x27;</span> });
+
+<span class="hljs-built_in">console</span>.log(select(<span class="hljs-string">&#x27;//bookml:title/text()&#x27;</span>, doc)[<span class="hljs-number">0</span>].nodeValue);</code></pre>
+				<p>➡</p>
+				<pre><code><span class="hljs-attribute">Harry Potter</span></code></pre>
+				<a href="#attributes" id="attributes" style="color: inherit; text-decoration: none;">
+					<h2>Attributes</h2>
+				</a>
+				<pre><code class="language-typescript"><span class="hljs-keyword">import</span> { DOMParserImpl <span class="hljs-keyword">as</span> dom } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;xmldom-ts&#x27;</span>;
+<span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> xpath <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;xpath-ts&#x27;</span>;
+
+<span class="hljs-keyword">const</span> xml = <span class="hljs-string">&quot;&lt;book author=&#x27;J. K. Rowling&#x27;&gt;&lt;title&gt;Harry Potter&lt;/title&gt;&lt;/book&gt;&quot;</span>;
+<span class="hljs-keyword">const</span> doc = <span class="hljs-keyword">new</span> dom().parseFromString(xml);
+<span class="hljs-keyword">const</span> author = xpath.select1(<span class="hljs-string">&#x27;/book/@author&#x27;</span>, doc).value;
+
+<span class="hljs-built_in">console</span>.log(author);</code></pre>
+				<p>➡</p>
+				<pre><code>J. <span class="hljs-keyword">K</span>. Rowling</code></pre>
+				<a href="#developing-and-testing" id="developing-and-testing" style="color: inherit; text-decoration: none;">
+					<h2>Developing and Testing</h2>
+				</a>
+				<a href="#download" id="download" style="color: inherit; text-decoration: none;">
+					<h4>Download</h4>
+				</a>
+				<pre><code>git <span class="hljs-keyword">clone</span> <span class="hljs-title">&#x27;https</span>://github.com/backslash47/<span class="hljs-keyword">xpath</span>-ts&#x27;
+cd <span class="hljs-keyword">xpath</span>-ts</code></pre>
+				<a href="#install" id="install" style="color: inherit; text-decoration: none;">
+					<h4>Install</h4>
+				</a>
+				<pre><code>npm <span class="hljs-keyword">install</span></code></pre>
+				<a href="#build" id="build" style="color: inherit; text-decoration: none;">
+					<h4>Build</h4>
+				</a>
+				<pre><code>npm <span class="hljs-keyword">run</span><span class="bash"> build</span></code></pre><p>You will get the transpiled code under &#39;/dist/lib&#39; and typings under &#39;/dist/types&#39;.</p>
+				<a href="#test" id="test" style="color: inherit; text-decoration: none;">
+					<h4>Test</h4>
+				</a>
+				<p>Run standard tests with Mocha + Chai testing framework</p>
+				<pre><code>npm <span class="hljs-built_in">test</span></code></pre>
+				<a href="#authors" id="authors" style="color: inherit; text-decoration: none;">
+					<h2>Authors</h2>
+				</a>
+				<ul>
+					<li><strong>Cameron McCormack</strong> - <em>Initial work</em> - <a href="http://mcc.id.au/xpathjs">blog</a></li>
+					<li><strong>Yaron Naveh</strong> - <a href="http://webservices20.blogspot.com/">blog</a></li>
+					<li><strong>goto100</strong></li>
+					<li><strong>Jimmy Rishe</strong></li>
+					<li><strong>Thomas Weinert</strong></li>
+					<li><strong>Matus Zamborsky</strong> - <em>TypeScript rewrite</em> - <a href="https://github.com/backslash47">Backslash47</a></li>
+					<li><strong>Others</strong> - <a href="https://github.com/goto100/xpath/graphs/contributors">others</a></li>
+				</ul>
+				<a href="#licence" id="licence" style="color: inherit; text-decoration: none;">
+					<h2>Licence</h2>
+				</a>
+				<p>This project is licensed under the MIT License - see the <a href="LICENCE.md">LICENCE.md</a> file for details.</p>
+			</div>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class="globals  ">
+						<a href="globals.html"><em>Globals</em></a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+					<li class=" tsd-kind-class">
+						<a href="classes/avltree.html" class="tsd-kind-icon">AVLTree</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/andoperation.html" class="tsd-kind-icon">And<wbr>Operation</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/baroperation.html" class="tsd-kind-icon">Bar<wbr>Operation</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/binaryoperation.html" class="tsd-kind-icon">Binary<wbr>Operation</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/divoperation.html" class="tsd-kind-icon">Div<wbr>Operation</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/equalsoperation.html" class="tsd-kind-icon">Equals<wbr>Operation</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/expression.html" class="tsd-kind-icon">Expression</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/functioncall.html" class="tsd-kind-icon">Function<wbr>Call</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/functionresolverimpl.html" class="tsd-kind-icon">Function<wbr>Resolver<wbr>Impl</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/functions.html" class="tsd-kind-icon">Functions</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/greaterthanoperation.html" class="tsd-kind-icon">Greater<wbr>Than<wbr>Operation</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/greaterthanorequaloperation.html" class="tsd-kind-icon">Greater<wbr>Than<wbr>OrEqual<wbr>Operation</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/lessthanoperation.html" class="tsd-kind-icon">Less<wbr>Than<wbr>Operation</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/lessthanorequaloperation.html" class="tsd-kind-icon">Less<wbr>Than<wbr>OrEqual<wbr>Operation</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/locationpath.html" class="tsd-kind-icon">Location<wbr>Path</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/minusoperation.html" class="tsd-kind-icon">Minus<wbr>Operation</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/modoperation.html" class="tsd-kind-icon">Mod<wbr>Operation</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/multiplyoperation.html" class="tsd-kind-icon">Multiply<wbr>Operation</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/namespaceresolverimpl.html" class="tsd-kind-icon">Namespace<wbr>Resolver<wbr>Impl</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/nodetest.html" class="tsd-kind-icon">Node<wbr>Test</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/nodexpathnsresolver.html" class="tsd-kind-icon">NodeXPathNSResolver</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/notequaloperation.html" class="tsd-kind-icon">Not<wbr>Equal<wbr>Operation</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/operators.html" class="tsd-kind-icon">Operators</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/oroperation.html" class="tsd-kind-icon">Or<wbr>Operation</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/pathexpr.html" class="tsd-kind-icon">Path<wbr>Expr</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/plusoperation.html" class="tsd-kind-icon">Plus<wbr>Operation</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/step.html" class="tsd-kind-icon">Step</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/unaryminusoperation.html" class="tsd-kind-icon">Unary<wbr>Minus<wbr>Operation</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/unaryoperation.html" class="tsd-kind-icon">Unary<wbr>Operation</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/variablereference.html" class="tsd-kind-icon">Variable<wbr>Reference</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/variableresolverimpl.html" class="tsd-kind-icon">Variable<wbr>Resolver<wbr>Impl</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/xboolean.html" class="tsd-kind-icon">XBoolean</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/xnodeset.html" class="tsd-kind-icon">XNode<wbr>Set</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/xnumber.html" class="tsd-kind-icon">XNumber</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/xpath.html" class="tsd-kind-icon">XPath</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/xpathcontext.html" class="tsd-kind-icon">XPath<wbr>Context</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/xpathevaluatorimpl.html" class="tsd-kind-icon">XPath<wbr>Evaluator<wbr>Impl</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/xpathexception.html" class="tsd-kind-icon">XPath<wbr>Exception</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/xpathexpressionimpl.html" class="tsd-kind-icon">XPath<wbr>Expression<wbr>Impl</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/xpathnsresolverwrapper.html" class="tsd-kind-icon">XPathNSResolver<wbr>Wrapper</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/xpathnamespace.html" class="tsd-kind-icon">XPath<wbr>Namespace</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/xpathparser.html" class="tsd-kind-icon">XPath<wbr>Parser</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/xpathresultimpl.html" class="tsd-kind-icon">XPath<wbr>Result<wbr>Impl</a>
+					</li>
+					<li class=" tsd-kind-class">
+						<a href="classes/xstring.html" class="tsd-kind-icon">XString</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/evaloptions.html" class="tsd-kind-icon">Eval<wbr>Options</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/functionresolver.html" class="tsd-kind-icon">Function<wbr>Resolver</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/namespaceresolver.html" class="tsd-kind-icon">Namespace<wbr>Resolver</a>
+					</li>
+					<li class=" tsd-kind-interface">
+						<a href="interfaces/variableresolver.html" class="tsd-kind-icon">Variable<wbr>Resolver</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#functiontype" class="tsd-kind-icon">Function<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-type-alias">
+						<a href="globals.html#operator" class="tsd-kind-icon">Operator</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#xmlns_namespace_uri" class="tsd-kind-icon">XMLNS_<wbr>NAMESPACE_<wbr>URI</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#xml_namespace_uri" class="tsd-kind-icon">XML_<wbr>NAMESPACE_<wbr>URI</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#defaultevaluator" class="tsd-kind-icon">default<wbr>Evaluator</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#defaultfunctionresolver" class="tsd-kind-icon">default<wbr>Function<wbr>Resolver</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#defaultnsresolver" class="tsd-kind-icon">defaultNSResolver</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#defaultvariableresolver" class="tsd-kind-icon">default<wbr>Variable<wbr>Resolver</a>
+					</li>
+					<li class=" tsd-kind-variable">
+						<a href="globals.html#parser" class="tsd-kind-icon">parser</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#checkarguments" class="tsd-kind-icon">check<wbr>Arguments</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#convertnsresolver" class="tsd-kind-icon">convertNSResolver</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#convertvalue" class="tsd-kind-icon">convert<wbr>Value</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#copyifpresent" class="tsd-kind-icon">copy<wbr>IfPresent</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#evaluate" class="tsd-kind-icon">evaluate</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#getelementbyid" class="tsd-kind-icon">get<wbr>Element<wbr>ById</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#getmessage" class="tsd-kind-icon">get<wbr>Message</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#installxpathsupport" class="tsd-kind-icon">installXPath<wbr>Support</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#isattribute" class="tsd-kind-icon">is<wbr>Attribute</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#iscdata" class="tsd-kind-icon">isCData</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#isdocument" class="tsd-kind-icon">is<wbr>Document</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#iselement" class="tsd-kind-icon">is<wbr>Element</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#isfragment" class="tsd-kind-icon">is<wbr>Fragment</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#isletter" class="tsd-kind-icon">is<wbr>Letter</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#isncnamechar" class="tsd-kind-icon">isNCName<wbr>Char</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#isnsresolver" class="tsd-kind-icon">isNSResolver</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#isnamespacenode" class="tsd-kind-icon">is<wbr>Namespace<wbr>Node</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#isprocessinginstruction" class="tsd-kind-icon">is<wbr>Processing<wbr>Instruction</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#isspace" class="tsd-kind-icon">is<wbr>Space</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#istext" class="tsd-kind-icon">is<wbr>Text</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#makecontext" class="tsd-kind-icon">make<wbr>Context</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#makeevaluator" class="tsd-kind-icon">make<wbr>Evaluator</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#makefunctionresolver" class="tsd-kind-icon">make<wbr>Function<wbr>Resolver</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#makefunctionresolverfromfunction" class="tsd-kind-icon">make<wbr>Function<wbr>Resolver<wbr>From<wbr>Function</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#makefunctionresolverfrommap" class="tsd-kind-icon">make<wbr>Function<wbr>Resolver<wbr>From<wbr>Map</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#makefunctionresolverfromobject" class="tsd-kind-icon">make<wbr>Function<wbr>Resolver<wbr>From<wbr>Object</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#makensresolver" class="tsd-kind-icon">makeNSResolver</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#makensresolverfromfunction" class="tsd-kind-icon">makeNSResolver<wbr>From<wbr>Function</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#makensresolverfrommap" class="tsd-kind-icon">makeNSResolver<wbr>From<wbr>Map</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#makensresolverfromobject" class="tsd-kind-icon">makeNSResolver<wbr>From<wbr>Object</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#makevariableresolver" class="tsd-kind-icon">make<wbr>Variable<wbr>Resolver</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#makevariableresolverfromfunction" class="tsd-kind-icon">make<wbr>Variable<wbr>Resolver<wbr>From<wbr>Function</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#nodeorder" class="tsd-kind-icon">node<wbr>Order</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#padlargenumber" class="tsd-kind-icon">pad<wbr>Large<wbr>Number</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#padsmallnumber" class="tsd-kind-icon">pad<wbr>Small<wbr>Number</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#parentnode" class="tsd-kind-icon">parent<wbr>Node</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#parse" class="tsd-kind-icon">parse</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#resolveqname" class="tsd-kind-icon">resolveQName</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#select" class="tsd-kind-icon">select</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#select1" class="tsd-kind-icon">select1</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#selectwithresolver" class="tsd-kind-icon">select<wbr>With<wbr>Resolver</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#splitqname" class="tsd-kind-icon">splitQName</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#unsupported" class="tsd-kind-icon">unsupported</a>
+					</li>
+					<li class=" tsd-kind-function">
+						<a href="globals.html#usenamespaces" class="tsd-kind-icon">use<wbr>Namespaces</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-method tsd-parent-kind-interface"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="assets/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,840 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>XPathParser | xpath-ts</title>
+	<meta name="description" content="Documentation for xpath-ts">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.json" data-base="..">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="../index.html" class="title">xpath-ts</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+							<input type="checkbox" id="tsd-filter-only-exported" />
+							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="../globals.html">Globals</a>
+				</li>
+				<li>
+					<a href="xpathparser.html">XPathParser</a>
+				</li>
+			</ul>
+			<h1>Class XPathParser</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-hierarchy">
+				<h3>Hierarchy</h3>
+				<ul class="tsd-hierarchy">
+					<li>
+						<span class="target">XPathParser</span>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel-group tsd-index-group">
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section ">
+							<h3>Constructors</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="xpathparser.html#constructor" class="tsd-kind-icon">constructor</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Properties</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="xpathparser.html#reduceactions" class="tsd-kind-icon">reduce<wbr>Actions</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="xpathparser.html#accept" class="tsd-kind-icon">ACCEPT</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="xpathparser.html#and" class="tsd-kind-icon">AND</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="xpathparser.html#asterisknametest" class="tsd-kind-icon">ASTERISKNAMETEST</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="xpathparser.html#at" class="tsd-kind-icon">AT</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="xpathparser.html#axisname" class="tsd-kind-icon">AXISNAME</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="xpathparser.html#bar" class="tsd-kind-icon">BAR</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="xpathparser.html#comma" class="tsd-kind-icon">COMMA</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="xpathparser.html#div" class="tsd-kind-icon">DIV</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="xpathparser.html#dollar" class="tsd-kind-icon">DOLLAR</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="xpathparser.html#dot" class="tsd-kind-icon">DOT</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="xpathparser.html#doublecolon" class="tsd-kind-icon">DOUBLECOLON</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="xpathparser.html#doubledot" class="tsd-kind-icon">DOUBLEDOT</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="xpathparser.html#doubleslash" class="tsd-kind-icon">DOUBLESLASH</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="xpathparser.html#equals" class="tsd-kind-icon">EQUALS</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="xpathparser.html#functionname" class="tsd-kind-icon">FUNCTIONNAME</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="xpathparser.html#greaterthan" class="tsd-kind-icon">GREATERTHAN</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="xpathparser.html#greaterthanorequal" class="tsd-kind-icon">GREATERTHANOREQUAL</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="xpathparser.html#leftbracket" class="tsd-kind-icon">LEFTBRACKET</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="xpathparser.html#leftparenthesis" class="tsd-kind-icon">LEFTPARENTHESIS</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="xpathparser.html#lessthan" class="tsd-kind-icon">LESSTHAN</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="xpathparser.html#lessthanorequal" class="tsd-kind-icon">LESSTHANOREQUAL</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="xpathparser.html#literal" class="tsd-kind-icon">LITERAL</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="xpathparser.html#minus" class="tsd-kind-icon">MINUS</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="xpathparser.html#mod" class="tsd-kind-icon">MOD</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="xpathparser.html#multiplyoperator" class="tsd-kind-icon">MULTIPLYOPERATOR</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="xpathparser.html#ncnamecolonasterisk" class="tsd-kind-icon">NCNAMECOLONASTERISK</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="xpathparser.html#nodetype" class="tsd-kind-icon">NODETYPE</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="xpathparser.html#notequal" class="tsd-kind-icon">NOTEQUAL</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="xpathparser.html#number" class="tsd-kind-icon">NUMBER</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="xpathparser.html#or" class="tsd-kind-icon">OR</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="xpathparser.html#plus" class="tsd-kind-icon">PLUS</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="xpathparser.html#processinginstructionwithliteral" class="tsd-kind-icon">PROCESSINGINSTRUCTIONWITHLITERAL</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="xpathparser.html#qname" class="tsd-kind-icon">QNAME</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="xpathparser.html#reduce" class="tsd-kind-icon">REDUCE</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="xpathparser.html#rightbracket" class="tsd-kind-icon">RIGHTBRACKET</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="xpathparser.html#rightparenthesis" class="tsd-kind-icon">RIGHTPARENTHESIS</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="xpathparser.html#shift" class="tsd-kind-icon">SHIFT</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="xpathparser.html#slash" class="tsd-kind-icon">SLASH</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="xpathparser.html#actiontable" class="tsd-kind-icon">action<wbr>Table</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="xpathparser.html#actiontablenumber" class="tsd-kind-icon">action<wbr>Table<wbr>Number</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="xpathparser.html#gototable" class="tsd-kind-icon">goto<wbr>Table</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="xpathparser.html#productions" class="tsd-kind-icon">productions</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Methods</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="xpathparser.html#parse" class="tsd-kind-icon">parse</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="xpathparser.html#tokenize" class="tsd-kind-icon">tokenize</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Constructors</h2>
+				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class">
+					<a name="constructor" class="tsd-anchor"></a>
+					<h3>constructor</h3>
+					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">new XPath<wbr>Parser<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="xpathparser.html" class="tsd-signature-type">XPathParser</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/backslash47/xpath/blob/7444ed5/src/xpath-parser.ts#L477">c2/xpath/src/xpath-parser.ts:477</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <a href="xpathparser.html" class="tsd-signature-type">XPathParser</a></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="reduceactions" class="tsd-anchor"></a>
+					<h3>reduce<wbr>Actions</h3>
+					<div class="tsd-signature tsd-kind-icon">reduce<wbr>Actions<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Array</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-symbol">(</span>rhs<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol"> =&gt; </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/backslash47/xpath/blob/7444ed5/src/xpath-parser.ts#L477">c2/xpath/src/xpath-parser.ts:477</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static">
+					<a name="accept" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> ACCEPT</h3>
+					<div class="tsd-signature tsd-kind-icon">ACCEPT<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;a&quot;</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/backslash47/xpath/blob/7444ed5/src/xpath-parser.ts#L475">c2/xpath/src/xpath-parser.ts:475</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static">
+					<a name="and" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> AND</h3>
+					<div class="tsd-signature tsd-kind-icon">AND<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 8</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/backslash47/xpath/blob/7444ed5/src/xpath-parser.ts#L443">c2/xpath/src/xpath-parser.ts:443</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static">
+					<a name="asterisknametest" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> ASTERISKNAMETEST</h3>
+					<div class="tsd-signature tsd-kind-icon">ASTERISKNAMETEST<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 17</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/backslash47/xpath/blob/7444ed5/src/xpath-parser.ts#L452">c2/xpath/src/xpath-parser.ts:452</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static">
+					<a name="at" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> AT</h3>
+					<div class="tsd-signature tsd-kind-icon">AT<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 32</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/backslash47/xpath/blob/7444ed5/src/xpath-parser.ts#L467">c2/xpath/src/xpath-parser.ts:467</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static">
+					<a name="axisname" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> AXISNAME</h3>
+					<div class="tsd-signature tsd-kind-icon">AXISNAME<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 14</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/backslash47/xpath/blob/7444ed5/src/xpath-parser.ts#L449">c2/xpath/src/xpath-parser.ts:449</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static">
+					<a name="bar" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> BAR</h3>
+					<div class="tsd-signature tsd-kind-icon">BAR<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 27</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/backslash47/xpath/blob/7444ed5/src/xpath-parser.ts#L462">c2/xpath/src/xpath-parser.ts:462</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static">
+					<a name="comma" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> COMMA</h3>
+					<div class="tsd-signature tsd-kind-icon">COMMA<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 31</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/backslash47/xpath/blob/7444ed5/src/xpath-parser.ts#L466">c2/xpath/src/xpath-parser.ts:466</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static">
+					<a name="div" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> DIV</h3>
+					<div class="tsd-signature tsd-kind-icon">DIV<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 11</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/backslash47/xpath/blob/7444ed5/src/xpath-parser.ts#L446">c2/xpath/src/xpath-parser.ts:446</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static">
+					<a name="dollar" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> DOLLAR</h3>
+					<div class="tsd-signature tsd-kind-icon">DOLLAR<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 36</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/backslash47/xpath/blob/7444ed5/src/xpath-parser.ts#L471">c2/xpath/src/xpath-parser.ts:471</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static">
+					<a name="dot" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> DOT</h3>
+					<div class="tsd-signature tsd-kind-icon">DOT<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 35</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/backslash47/xpath/blob/7444ed5/src/xpath-parser.ts#L470">c2/xpath/src/xpath-parser.ts:470</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static">
+					<a name="doublecolon" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> DOUBLECOLON</h3>
+					<div class="tsd-signature tsd-kind-icon">DOUBLECOLON<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 3</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/backslash47/xpath/blob/7444ed5/src/xpath-parser.ts#L438">c2/xpath/src/xpath-parser.ts:438</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static">
+					<a name="doubledot" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> DOUBLEDOT</h3>
+					<div class="tsd-signature tsd-kind-icon">DOUBLEDOT<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 2</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/backslash47/xpath/blob/7444ed5/src/xpath-parser.ts#L437">c2/xpath/src/xpath-parser.ts:437</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static">
+					<a name="doubleslash" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> DOUBLESLASH</h3>
+					<div class="tsd-signature tsd-kind-icon">DOUBLESLASH<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 4</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/backslash47/xpath/blob/7444ed5/src/xpath-parser.ts#L439">c2/xpath/src/xpath-parser.ts:439</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static">
+					<a name="equals" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> EQUALS</h3>
+					<div class="tsd-signature tsd-kind-icon">EQUALS<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 22</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/backslash47/xpath/blob/7444ed5/src/xpath-parser.ts#L457">c2/xpath/src/xpath-parser.ts:457</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static">
+					<a name="functionname" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> FUNCTIONNAME</h3>
+					<div class="tsd-signature tsd-kind-icon">FUNCTIONNAME<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 13</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/backslash47/xpath/blob/7444ed5/src/xpath-parser.ts#L448">c2/xpath/src/xpath-parser.ts:448</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static">
+					<a name="greaterthan" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> GREATERTHAN</h3>
+					<div class="tsd-signature tsd-kind-icon">GREATERTHAN<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 24</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/backslash47/xpath/blob/7444ed5/src/xpath-parser.ts#L459">c2/xpath/src/xpath-parser.ts:459</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static">
+					<a name="greaterthanorequal" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> GREATERTHANOREQUAL</h3>
+					<div class="tsd-signature tsd-kind-icon">GREATERTHANOREQUAL<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 7</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/backslash47/xpath/blob/7444ed5/src/xpath-parser.ts#L442">c2/xpath/src/xpath-parser.ts:442</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static">
+					<a name="leftbracket" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> LEFTBRACKET</h3>
+					<div class="tsd-signature tsd-kind-icon">LEFTBRACKET<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 33</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/backslash47/xpath/blob/7444ed5/src/xpath-parser.ts#L468">c2/xpath/src/xpath-parser.ts:468</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static">
+					<a name="leftparenthesis" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> LEFTPARENTHESIS</h3>
+					<div class="tsd-signature tsd-kind-icon">LEFTPARENTHESIS<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 29</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/backslash47/xpath/blob/7444ed5/src/xpath-parser.ts#L464">c2/xpath/src/xpath-parser.ts:464</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static">
+					<a name="lessthan" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> LESSTHAN</h3>
+					<div class="tsd-signature tsd-kind-icon">LESSTHAN<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 23</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/backslash47/xpath/blob/7444ed5/src/xpath-parser.ts#L458">c2/xpath/src/xpath-parser.ts:458</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static">
+					<a name="lessthanorequal" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> LESSTHANOREQUAL</h3>
+					<div class="tsd-signature tsd-kind-icon">LESSTHANOREQUAL<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 6</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/backslash47/xpath/blob/7444ed5/src/xpath-parser.ts#L441">c2/xpath/src/xpath-parser.ts:441</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static">
+					<a name="literal" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> LITERAL</h3>
+					<div class="tsd-signature tsd-kind-icon">LITERAL<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 15</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/backslash47/xpath/blob/7444ed5/src/xpath-parser.ts#L450">c2/xpath/src/xpath-parser.ts:450</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static">
+					<a name="minus" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> MINUS</h3>
+					<div class="tsd-signature tsd-kind-icon">MINUS<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 26</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/backslash47/xpath/blob/7444ed5/src/xpath-parser.ts#L461">c2/xpath/src/xpath-parser.ts:461</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static">
+					<a name="mod" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> MOD</h3>
+					<div class="tsd-signature tsd-kind-icon">MOD<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 10</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/backslash47/xpath/blob/7444ed5/src/xpath-parser.ts#L445">c2/xpath/src/xpath-parser.ts:445</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static">
+					<a name="multiplyoperator" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> MULTIPLYOPERATOR</h3>
+					<div class="tsd-signature tsd-kind-icon">MULTIPLYOPERATOR<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 12</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/backslash47/xpath/blob/7444ed5/src/xpath-parser.ts#L447">c2/xpath/src/xpath-parser.ts:447</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static">
+					<a name="ncnamecolonasterisk" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> NCNAMECOLONASTERISK</h3>
+					<div class="tsd-signature tsd-kind-icon">NCNAMECOLONASTERISK<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 19</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/backslash47/xpath/blob/7444ed5/src/xpath-parser.ts#L454">c2/xpath/src/xpath-parser.ts:454</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static">
+					<a name="nodetype" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> NODETYPE</h3>
+					<div class="tsd-signature tsd-kind-icon">NODETYPE<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 20</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/backslash47/xpath/blob/7444ed5/src/xpath-parser.ts#L455">c2/xpath/src/xpath-parser.ts:455</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static">
+					<a name="notequal" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> NOTEQUAL</h3>
+					<div class="tsd-signature tsd-kind-icon">NOTEQUAL<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 5</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/backslash47/xpath/blob/7444ed5/src/xpath-parser.ts#L440">c2/xpath/src/xpath-parser.ts:440</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static">
+					<a name="number" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> NUMBER</h3>
+					<div class="tsd-signature tsd-kind-icon">NUMBER<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 16</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/backslash47/xpath/blob/7444ed5/src/xpath-parser.ts#L451">c2/xpath/src/xpath-parser.ts:451</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static">
+					<a name="or" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> OR</h3>
+					<div class="tsd-signature tsd-kind-icon">OR<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 9</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/backslash47/xpath/blob/7444ed5/src/xpath-parser.ts#L444">c2/xpath/src/xpath-parser.ts:444</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static">
+					<a name="plus" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> PLUS</h3>
+					<div class="tsd-signature tsd-kind-icon">PLUS<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 25</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/backslash47/xpath/blob/7444ed5/src/xpath-parser.ts#L460">c2/xpath/src/xpath-parser.ts:460</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static">
+					<a name="processinginstructionwithliteral" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> PROCESSINGINSTRUCTIONWITHLITERAL</h3>
+					<div class="tsd-signature tsd-kind-icon">PROCESSINGINSTRUCTIONWITHLITERAL<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 21</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/backslash47/xpath/blob/7444ed5/src/xpath-parser.ts#L456">c2/xpath/src/xpath-parser.ts:456</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static">
+					<a name="qname" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> QNAME</h3>
+					<div class="tsd-signature tsd-kind-icon">QNAME<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 18</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/backslash47/xpath/blob/7444ed5/src/xpath-parser.ts#L453">c2/xpath/src/xpath-parser.ts:453</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static">
+					<a name="reduce" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> REDUCE</h3>
+					<div class="tsd-signature tsd-kind-icon">REDUCE<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;r&quot;</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/backslash47/xpath/blob/7444ed5/src/xpath-parser.ts#L474">c2/xpath/src/xpath-parser.ts:474</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static">
+					<a name="rightbracket" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> RIGHTBRACKET</h3>
+					<div class="tsd-signature tsd-kind-icon">RIGHTBRACKET<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 34</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/backslash47/xpath/blob/7444ed5/src/xpath-parser.ts#L469">c2/xpath/src/xpath-parser.ts:469</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static">
+					<a name="rightparenthesis" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> RIGHTPARENTHESIS</h3>
+					<div class="tsd-signature tsd-kind-icon">RIGHTPARENTHESIS<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 30</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/backslash47/xpath/blob/7444ed5/src/xpath-parser.ts#L465">c2/xpath/src/xpath-parser.ts:465</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static">
+					<a name="shift" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> SHIFT</h3>
+					<div class="tsd-signature tsd-kind-icon">SHIFT<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> = &quot;s&quot;</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/backslash47/xpath/blob/7444ed5/src/xpath-parser.ts#L473">c2/xpath/src/xpath-parser.ts:473</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static">
+					<a name="slash" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> SLASH</h3>
+					<div class="tsd-signature tsd-kind-icon">SLASH<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> = 28</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/backslash47/xpath/blob/7444ed5/src/xpath-parser.ts#L463">c2/xpath/src/xpath-parser.ts:463</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static">
+					<a name="actiontable" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> action<wbr>Table</h3>
+					<div class="tsd-signature tsd-kind-icon">action<wbr>Table<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = [&#x27; s s        sssssssss    s ss  s  ss&#x27;,&#x27;                 s                  &#x27;,&#x27;r  rrrrrrrrr         rrrrrrr rr  r  &#x27;,&#x27;                rrrrr               &#x27;,&#x27; s s        sssssssss    s ss  s  ss&#x27;,&#x27;rs  rrrrrrrr s  sssssrrrrrr  rrs rs &#x27;,&#x27; s s        sssssssss    s ss  s  ss&#x27;,&#x27;                            s       &#x27;,&#x27;                            s       &#x27;,&#x27;r  rrrrrrrrr         rrrrrrr rr rr  &#x27;,&#x27;r  rrrrrrrrr         rrrrrrr rr rr  &#x27;,&#x27;r  rrrrrrrrr         rrrrrrr rr rr  &#x27;,&#x27;r  rrrrrrrrr         rrrrrrr rr rr  &#x27;,&#x27;r  rrrrrrrrr         rrrrrrr rr rr  &#x27;,&#x27;  s                                 &#x27;,&#x27;                            s       &#x27;,&#x27; s           s  sssss          s  s &#x27;,&#x27;r  rrrrrrrrr         rrrrrrr rr  r  &#x27;,&#x27;a                                   &#x27;,&#x27;r       s                    rr  r  &#x27;,&#x27;r      sr                    rr  r  &#x27;,&#x27;r   s  rr            s       rr  r  &#x27;,&#x27;r   rssrr            rss     rr  r  &#x27;,&#x27;r   rrrrr            rrrss   rr  r  &#x27;,&#x27;r   rrrrrsss         rrrrr   rr  r  &#x27;,&#x27;r   rrrrrrrr         rrrrr   rr  r  &#x27;,&#x27;r   rrrrrrrr         rrrrrs  rr  r  &#x27;,&#x27;r   rrrrrrrr         rrrrrr  rr  r  &#x27;,&#x27;r   rrrrrrrr         rrrrrr  rr  r  &#x27;,&#x27;r  srrrrrrrr         rrrrrrs rr sr  &#x27;,&#x27;r  srrrrrrrr         rrrrrrs rr  r  &#x27;,&#x27;r  rrrrrrrrr         rrrrrrr rr rr  &#x27;,&#x27;r  rrrrrrrrr         rrrrrrr rr rr  &#x27;,&#x27;r  rrrrrrrrr         rrrrrrr rr rr  &#x27;,&#x27;r   rrrrrrrr         rrrrrr  rr  r  &#x27;,&#x27;r   rrrrrrrr         rrrrrr  rr  r  &#x27;,&#x27;r  rrrrrrrrr         rrrrrrr rr  r  &#x27;,&#x27;r  rrrrrrrrr         rrrrrrr rr  r  &#x27;,&#x27;                sssss               &#x27;,&#x27;r  rrrrrrrrr         rrrrrrr rr sr  &#x27;,&#x27;r  rrrrrrrrr         rrrrrrr rr  r  &#x27;,&#x27;r  rrrrrrrrr         rrrrrrr rr rr  &#x27;,&#x27;r  rrrrrrrrr         rrrrrrr rr rr  &#x27;,&#x27;                             s      &#x27;,&#x27;r  srrrrrrrr         rrrrrrs rr  r  &#x27;,&#x27;r   rrrrrrrr         rrrrr   rr  r  &#x27;,&#x27;              s                     &#x27;,&#x27;                             s      &#x27;,&#x27;                rrrrr               &#x27;,&#x27; s s        sssssssss    s sss s  ss&#x27;,&#x27;r  srrrrrrrr         rrrrrrs rr  r  &#x27;,&#x27; s s        sssssssss    s ss  s  ss&#x27;,&#x27; s s        sssssssss    s ss  s  ss&#x27;,&#x27; s s        sssssssss    s ss  s  ss&#x27;,&#x27; s s        sssssssss    s ss  s  ss&#x27;,&#x27; s s        sssssssss    s ss  s  ss&#x27;,&#x27; s s        sssssssss    s ss  s  ss&#x27;,&#x27; s s        sssssssss    s ss  s  ss&#x27;,&#x27; s s        sssssssss    s ss  s  ss&#x27;,&#x27; s s        sssssssss    s ss  s  ss&#x27;,&#x27; s s        sssssssss    s ss  s  ss&#x27;,&#x27; s s        sssssssss    s ss  s  ss&#x27;,&#x27; s s        sssssssss    s ss  s  ss&#x27;,&#x27; s s        sssssssss    s ss  s  ss&#x27;,&#x27; s s        sssssssss      ss  s  ss&#x27;,&#x27; s s        sssssssss    s ss  s  ss&#x27;,&#x27; s           s  sssss          s  s &#x27;,&#x27; s           s  sssss          s  s &#x27;,&#x27;r  rrrrrrrrr         rrrrrrr rr rr  &#x27;,&#x27; s           s  sssss          s  s &#x27;,&#x27; s           s  sssss          s  s &#x27;,&#x27;r  rrrrrrrrr         rrrrrrr rr sr  &#x27;,&#x27;r  rrrrrrrrr         rrrrrrr rr sr  &#x27;,&#x27;r  rrrrrrrrr         rrrrrrr rr  r  &#x27;,&#x27;r  rrrrrrrrr         rrrrrrr rr rr  &#x27;,&#x27;                             s      &#x27;,&#x27;r  rrrrrrrrr         rrrrrrr rr rr  &#x27;,&#x27;r  rrrrrrrrr         rrrrrrr rr rr  &#x27;,&#x27;                             rr     &#x27;,&#x27;                             s      &#x27;,&#x27;                             rs     &#x27;,&#x27;r      sr                    rr  r  &#x27;,&#x27;r   s  rr            s       rr  r  &#x27;,&#x27;r   rssrr            rss     rr  r  &#x27;,&#x27;r   rssrr            rss     rr  r  &#x27;,&#x27;r   rrrrr            rrrss   rr  r  &#x27;,&#x27;r   rrrrr            rrrss   rr  r  &#x27;,&#x27;r   rrrrr            rrrss   rr  r  &#x27;,&#x27;r   rrrrr            rrrss   rr  r  &#x27;,&#x27;r   rrrrrsss         rrrrr   rr  r  &#x27;,&#x27;r   rrrrrsss         rrrrr   rr  r  &#x27;,&#x27;r   rrrrrrrr         rrrrr   rr  r  &#x27;,&#x27;r   rrrrrrrr         rrrrr   rr  r  &#x27;,&#x27;r   rrrrrrrr         rrrrr   rr  r  &#x27;,&#x27;r   rrrrrrrr         rrrrrr  rr  r  &#x27;,&#x27;                                 r  &#x27;,&#x27;                                 s  &#x27;,&#x27;r  srrrrrrrr         rrrrrrs rr  r  &#x27;,&#x27;r  srrrrrrrr         rrrrrrs rr  r  &#x27;,&#x27;r  rrrrrrrrr         rrrrrrr rr  r  &#x27;,&#x27;r  rrrrrrrrr         rrrrrrr rr  r  &#x27;,&#x27;r  rrrrrrrrr         rrrrrrr rr  r  &#x27;,&#x27;r  rrrrrrrrr         rrrrrrr rr  r  &#x27;,&#x27;r  rrrrrrrrr         rrrrrrr rr rr  &#x27;,&#x27;r  rrrrrrrrr         rrrrrrr rr rr  &#x27;,&#x27; s s        sssssssss    s ss  s  ss&#x27;,&#x27;r  rrrrrrrrr         rrrrrrr rr rr  &#x27;,&#x27;                             r      &#x27;]</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/backslash47/xpath/blob/7444ed5/src/xpath-parser.ts#L30">c2/xpath/src/xpath-parser.ts:30</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static">
+					<a name="actiontablenumber" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> action<wbr>Table<wbr>Number</h3>
+					<div class="tsd-signature tsd-kind-icon">action<wbr>Table<wbr>Number<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = [&#x27; 1 0        /.-,+*)(\&#x27;    &amp; %$  #  &quot;!&#x27;,&#x27;                 J                  &#x27;,&#x27;a  aaaaaaaaa         aaaaaaa aa  a  &#x27;,&#x27;                YYYYY               &#x27;,&#x27; 1 0        /.-,+*)(\&#x27;    &amp; %$  #  &quot;!&#x27;,&#x27;K1  KKKKKKKK .  +*)(\&#x27;KKKKKK  KK# K&quot; &#x27;,&#x27; 1 0        /.-,+*)(\&#x27;    &amp; %$  #  &quot;!&#x27;,&#x27;                            N       &#x27;,&#x27;                            O       &#x27;,&#x27;e  eeeeeeeee         eeeeeee ee ee  &#x27;,&#x27;f  fffffffff         fffffff ff ff  &#x27;,&#x27;d  ddddddddd         ddddddd dd dd  &#x27;,&#x27;B  BBBBBBBBB         BBBBBBB BB BB  &#x27;,&#x27;A  AAAAAAAAA         AAAAAAA AA AA  &#x27;,&#x27;  P                                 &#x27;,&#x27;                            Q       &#x27;,&#x27; 1           .  +*)(\&#x27;          #  &quot; &#x27;,&#x27;b  bbbbbbbbb         bbbbbbb bb  b  &#x27;,&#x27;                                    &#x27;,&#x27;!       S                    !!  !  &#x27;,&#x27;&quot;      T&quot;                    &quot;&quot;  &quot;  &#x27;,&#x27;$   V  $$            U       $$  $  &#x27;,&#x27;&amp;   &amp;ZY&amp;&amp;            &amp;XW     &amp;&amp;  &amp;  &#x27;,&#x27;)   )))))            )))\\[   ))  )  &#x27;,&#x27;.   ....._^]         .....   ..  .  &#x27;,&#x27;1   11111111         11111   11  1  &#x27;,&#x27;5   55555555         55555&#x60;  55  5  &#x27;,&#x27;7   77777777         777777  77  7  &#x27;,&#x27;9   99999999         999999  99  9  &#x27;,&#x27;:  c::::::::         ::::::b :: a:  &#x27;,&#x27;I  fIIIIIIII         IIIIIIe II  I  &#x27;,&#x27;&#x3D;  &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;         &#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D;&#x3D; &#x3D;&#x3D; &#x3D;&#x3D;  &#x27;,&#x27;?  ?????????         ??????? ?? ??  &#x27;,&#x27;C  CCCCCCCCC         CCCCCCC CC CC  &#x27;,&#x27;J   JJJJJJJJ         JJJJJJ  JJ  J  &#x27;,&#x27;M   MMMMMMMM         MMMMMM  MM  M  &#x27;,&#x27;N  NNNNNNNNN         NNNNNNN NN  N  &#x27;,&#x27;P  PPPPPPPPP         PPPPPPP PP  P  &#x27;,&quot;                +*)(&#x27;               &quot;,&#x27;R  RRRRRRRRR         RRRRRRR RR aR  &#x27;,&#x27;U  UUUUUUUUU         UUUUUUU UU  U  &#x27;,&#x27;Z  ZZZZZZZZZ         ZZZZZZZ ZZ ZZ  &#x27;,&#x27;c  ccccccccc         ccccccc cc cc  &#x27;,&#x27;                             j      &#x27;,&#x27;L  fLLLLLLLL         LLLLLLe LL  L  &#x27;,&#x27;6   66666666         66666   66  6  &#x27;,&#x27;              k                     &#x27;,&#x27;                             l      &#x27;,&#x27;                XXXXX               &#x27;,&#x27; 1 0        /.-,+*)(\&#x27;    &amp; %$m #  &quot;!&#x27;,&#x27;_  f________         ______e __  _  &#x27;,&#x27; 1 0        /.-,+*)(\&#x27;    &amp; %$  #  &quot;!&#x27;,&#x27; 1 0        /.-,+*)(\&#x27;    &amp; %$  #  &quot;!&#x27;,&#x27; 1 0        /.-,+*)(\&#x27;    &amp; %$  #  &quot;!&#x27;,&#x27; 1 0        /.-,+*)(\&#x27;    &amp; %$  #  &quot;!&#x27;,&#x27; 1 0        /.-,+*)(\&#x27;    &amp; %$  #  &quot;!&#x27;,&#x27; 1 0        /.-,+*)(\&#x27;    &amp; %$  #  &quot;!&#x27;,&#x27; 1 0        /.-,+*)(\&#x27;    &amp; %$  #  &quot;!&#x27;,&#x27; 1 0        /.-,+*)(\&#x27;    &amp; %$  #  &quot;!&#x27;,&#x27; 1 0        /.-,+*)(\&#x27;    &amp; %$  #  &quot;!&#x27;,&#x27; 1 0        /.-,+*)(\&#x27;    &amp; %$  #  &quot;!&#x27;,&#x27; 1 0        /.-,+*)(\&#x27;    &amp; %$  #  &quot;!&#x27;,&#x27; 1 0        /.-,+*)(\&#x27;    &amp; %$  #  &quot;!&#x27;,&#x27; 1 0        /.-,+*)(\&#x27;    &amp; %$  #  &quot;!&#x27;,&#x27; 1 0        /.-,+*)(\&#x27;      %$  #  &quot;!&#x27;,&#x27; 1 0        /.-,+*)(\&#x27;    &amp; %$  #  &quot;!&#x27;,&#x27; 1           .  +*)(\&#x27;          #  &quot; &#x27;,&#x27; 1           .  +*)(\&#x27;          #  &quot; &#x27;,&#x27;&gt;  &gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;         &gt;&gt;&gt;&gt;&gt;&gt;&gt; &gt;&gt; &gt;&gt;  &#x27;,&#x27; 1           .  +*)(\&#x27;          #  &quot; &#x27;,&#x27; 1           .  +*)(\&#x27;          #  &quot; &#x27;,&#x27;Q  QQQQQQQQQ         QQQQQQQ QQ aQ  &#x27;,&#x27;V  VVVVVVVVV         VVVVVVV VV aV  &#x27;,&#x27;T  TTTTTTTTT         TTTTTTT TT  T  &#x27;,&#x27;@  @@@@@@@@@         @@@@@@@ @@ @@  &#x27;,&#x27;                             \x87      &#x27;,&#x27;[  [[[[[[[[[         [[[[[[[ [[ [[  &#x27;,&#x27;D  DDDDDDDDD         DDDDDDD DD DD  &#x27;,&#x27;                             HH     &#x27;,&#x27;                             \x88      &#x27;,&#x27;                             F\x89     &#x27;,&#x27;#      T#                    ##  #  &#x27;,&#x27;%   V  %%            U       %%  %  &#x27;,&quot;&#x27;   &#x27;ZY&#x27;&#x27;            &#x27;XW     &#x27;&#x27;  &#x27;  &quot;,&#x27;(   (ZY((            (XW     ((  (  &#x27;,&#x27;+   +++++            +++\\[   ++  +  &#x27;,&#x27;*   *****            ***\\[   **  *  &#x27;,&#x27;-   -----            ---\\[   --  -  &#x27;,&#x27;,   ,,,,,            ,,,\\[   ,,  ,  &#x27;,&#x27;0   00000_^]         00000   00  0  &#x27;,&#x27;/   /////_^]         /////   //  /  &#x27;,&#x27;2   22222222         22222   22  2  &#x27;,&#x27;3   33333333         33333   33  3  &#x27;,&#x27;4   44444444         44444   44  4  &#x27;,&#x27;8   88888888         888888  88  8  &#x27;,&#x27;                                 ^  &#x27;,&#x27;                                 \x8a  &#x27;,&#x27;;  f;;;;;;;;         ;;;;;;e ;;  ;  &#x27;,&#x27;&lt;  f&lt;&lt;&lt;&lt;&lt;&lt;&lt;&lt;         &lt;&lt;&lt;&lt;&lt;&lt;e &lt;&lt;  &lt;  &#x27;,&#x27;O  OOOOOOOOO         OOOOOOO OO  O  &#x27;,&#x27;&#x60;  &#x60;&#x60;&#x60;&#x60;&#x60;&#x60;&#x60;&#x60;&#x60;         &#x60;&#x60;&#x60;&#x60;&#x60;&#x60;&#x60; &#x60;&#x60;  &#x60;  &#x27;,&#x27;S  SSSSSSSSS         SSSSSSS SS  S  &#x27;,&#x27;W  WWWWWWWWW         WWWWWWW WW  W  &#x27;,&#x27;\\  \\\\\\\\\\\\\\\\\\         \\\\\\\\\\\\\\ \\\\ \\\\  &#x27;,&#x27;E  EEEEEEEEE         EEEEEEE EE EE  &#x27;,&#x27; 1 0        /.-,+*)(\&#x27;    &amp; %$  #  &quot;!&#x27;,&#x27;]  ]]]]]]]]]         ]]]]]]] ]] ]]  &#x27;,&#x27;                             G      &#x27;]</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/backslash47/xpath/blob/7444ed5/src/xpath-parser.ts#L141">c2/xpath/src/xpath-parser.ts:141</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static">
+					<a name="gototable" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> goto<wbr>Table</h3>
+					<div class="tsd-signature tsd-kind-icon">goto<wbr>Table<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = [&#x27;3456789:;&lt;&#x3D;&gt;?@ AB  CDEFGH IJ &#x27;,&#x27;                             &#x27;,&#x27;                             &#x27;,&#x27;                             &#x27;,&#x27;L456789:;&lt;&#x3D;&gt;?@ AB  CDEFGH IJ &#x27;,&#x27;            M        EFGH IJ &#x27;,&#x27;       N;&lt;&#x3D;&gt;?@ AB  CDEFGH IJ &#x27;,&#x27;                             &#x27;,&#x27;                             &#x27;,&#x27;                             &#x27;,&#x27;                             &#x27;,&#x27;                             &#x27;,&#x27;                             &#x27;,&#x27;                             &#x27;,&#x27;                             &#x27;,&#x27;                             &#x27;,&#x27;            S        EFGH IJ &#x27;,&#x27;                             &#x27;,&#x27;                             &#x27;,&#x27;                             &#x27;,&#x27;                             &#x27;,&#x27;                             &#x27;,&#x27;                             &#x27;,&#x27;                             &#x27;,&#x27;                             &#x27;,&#x27;                             &#x27;,&#x27;                             &#x27;,&#x27;                             &#x27;,&#x27;                             &#x27;,&#x27;              e              &#x27;,&#x27;                             &#x27;,&#x27;                             &#x27;,&#x27;                             &#x27;,&#x27;                             &#x27;,&#x27;                             &#x27;,&#x27;                             &#x27;,&#x27;                             &#x27;,&#x27;                             &#x27;,&#x27;                        h  J &#x27;,&#x27;              i          j   &#x27;,&#x27;                             &#x27;,&#x27;                             &#x27;,&#x27;                             &#x27;,&#x27;                             &#x27;,&#x27;                             &#x27;,&#x27;                             &#x27;,&#x27;                             &#x27;,&#x27;                             &#x27;,&#x27;                             &#x27;,&#x27;o456789:;&lt;&#x3D;&gt;?@ ABpqCDEFGH IJ &#x27;,&#x27;                             &#x27;,&#x27;  r6789:;&lt;&#x3D;&gt;?@ AB  CDEFGH IJ &#x27;,&#x27;   s789:;&lt;&#x3D;&gt;?@ AB  CDEFGH IJ &#x27;,&#x27;    t89:;&lt;&#x3D;&gt;?@ AB  CDEFGH IJ &#x27;,&#x27;    u89:;&lt;&#x3D;&gt;?@ AB  CDEFGH IJ &#x27;,&#x27;     v9:;&lt;&#x3D;&gt;?@ AB  CDEFGH IJ &#x27;,&#x27;     w9:;&lt;&#x3D;&gt;?@ AB  CDEFGH IJ &#x27;,&#x27;     x9:;&lt;&#x3D;&gt;?@ AB  CDEFGH IJ &#x27;,&#x27;     y9:;&lt;&#x3D;&gt;?@ AB  CDEFGH IJ &#x27;,&#x27;      z:;&lt;&#x3D;&gt;?@ AB  CDEFGH IJ &#x27;,&#x27;      {:;&lt;&#x3D;&gt;?@ AB  CDEFGH IJ &#x27;,&#x27;       |;&lt;&#x3D;&gt;?@ AB  CDEFGH IJ &#x27;,&#x27;       };&lt;&#x3D;&gt;?@ AB  CDEFGH IJ &#x27;,&#x27;       ~;&lt;&#x3D;&gt;?@ AB  CDEFGH IJ &#x27;,&#x27;         \x7f&#x3D;&gt;?@ AB  CDEFGH IJ &#x27;,&#x27;\x80456789:;&lt;&#x3D;&gt;?@ AB  CDEFGH IJ\x81&#x27;,&#x27;            \x82        EFGH IJ &#x27;,&#x27;            \x83        EFGH IJ &#x27;,&#x27;                             &#x27;,&#x27;                     \x84 GH IJ &#x27;,&#x27;                     \x85 GH IJ &#x27;,&#x27;              i          \x86   &#x27;,&#x27;              i          \x87   &#x27;,&#x27;                             &#x27;,&#x27;                             &#x27;,&#x27;                             &#x27;,&#x27;                             &#x27;,&#x27;                             &#x27;,&#x27;                             &#x27;,&#x27;                             &#x27;,&#x27;                             &#x27;,&#x27;                             &#x27;,&#x27;                             &#x27;,&#x27;                             &#x27;,&#x27;                             &#x27;,&#x27;                             &#x27;,&#x27;                             &#x27;,&#x27;                             &#x27;,&#x27;                             &#x27;,&#x27;                             &#x27;,&#x27;                             &#x27;,&#x27;                             &#x27;,&#x27;                             &#x27;,&#x27;                             &#x27;,&#x27;                             &#x27;,&#x27;                             &#x27;,&#x27;                             &#x27;,&#x27;                             &#x27;,&#x27;                             &#x27;,&#x27;                             &#x27;,&#x27;                             &#x27;,&#x27;                             &#x27;,&#x27;                             &#x27;,&#x27;                             &#x27;,&#x27;                             &#x27;,&#x27;o456789:;&lt;&#x3D;&gt;?@ AB\x8cqCDEFGH IJ &#x27;,&#x27;                             &#x27;,&#x27;                             &#x27;]</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/backslash47/xpath/blob/7444ed5/src/xpath-parser.ts#L252">c2/xpath/src/xpath-parser.ts:252</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static">
+					<a name="productions" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> productions</h3>
+					<div class="tsd-signature tsd-kind-icon">productions<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> = [[1, 1, 2],[2, 1, 3],[3, 1, 4],[3, 3, 3, -9, 4],[4, 1, 5],[4, 3, 4, -8, 5],[5, 1, 6],[5, 3, 5, -22, 6],[5, 3, 5, -5, 6],[6, 1, 7],[6, 3, 6, -23, 7],[6, 3, 6, -24, 7],[6, 3, 6, -6, 7],[6, 3, 6, -7, 7],[7, 1, 8],[7, 3, 7, -25, 8],[7, 3, 7, -26, 8],[8, 1, 9],[8, 3, 8, -12, 9],[8, 3, 8, -11, 9],[8, 3, 8, -10, 9],[9, 1, 10],[9, 2, -26, 9],[10, 1, 11],[10, 3, 10, -27, 11],[11, 1, 12],[11, 1, 13],[11, 3, 13, -28, 14],[11, 3, 13, -4, 14],[13, 1, 15],[13, 2, 13, 16],[15, 1, 17],[15, 3, -29, 2, -30],[15, 1, -15],[15, 1, -16],[15, 1, 18],[18, 3, -13, -29, -30],[18, 4, -13, -29, 19, -30],[19, 1, 20],[19, 3, 20, -31, 19],[20, 1, 2],[12, 1, 14],[12, 1, 21],[21, 1, -28],[21, 2, -28, 14],[21, 1, 22],[14, 1, 23],[14, 3, 14, -28, 23],[14, 1, 24],[23, 2, 25, 26],[23, 1, 26],[23, 3, 25, 26, 27],[23, 2, 26, 27],[23, 1, 28],[27, 1, 16],[27, 2, 16, 27],[25, 2, -14, -3],[25, 1, -32],[26, 1, 29],[26, 3, -20, -29, -30],[26, 4, -21, -29, -15, -30],[16, 3, -33, 30, -34],[30, 1, 2],[22, 2, -4, 14],[24, 3, 14, -4, 23],[28, 1, -35],[28, 1, -2],[17, 2, -36, -18],[29, 1, -17],[29, 1, -19],[29, 1, -18]]</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/backslash47/xpath/blob/7444ed5/src/xpath-parser.ts#L363">c2/xpath/src/xpath-parser.ts:363</a></li>
+						</ul>
+					</aside>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="parse" class="tsd-anchor"></a>
+					<h3>parse</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">parse<span class="tsd-signature-symbol">(</span>str<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="xpath.html" class="tsd-signature-type">XPath</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/backslash47/xpath/blob/7444ed5/src/xpath-parser.ts#L1048">c2/xpath/src/xpath-parser.ts:1048</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>str: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="xpath.html" class="tsd-signature-type">XPath</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="tokenize" class="tsd-anchor"></a>
+					<h3>tokenize</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">tokenize<span class="tsd-signature-symbol">(</span>s1<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">]</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/backslash47/xpath/blob/7444ed5/src/xpath-parser.ts#L689">c2/xpath/src/xpath-parser.ts:689</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>s1: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">]</span></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class="globals  ">
+						<a href="../globals.html"><em>Globals</em></a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-class">
+						<a href="xpathparser.html" class="tsd-kind-icon">XPath<wbr>Parser</a>
+						<ul>
+							<li class=" tsd-kind-constructor tsd-parent-kind-class">
+								<a href="xpathparser.html#constructor" class="tsd-kind-icon">constructor</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="xpathparser.html#reduceactions" class="tsd-kind-icon">reduce<wbr>Actions</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static">
+								<a href="xpathparser.html#accept" class="tsd-kind-icon">ACCEPT</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static">
+								<a href="xpathparser.html#and" class="tsd-kind-icon">AND</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static">
+								<a href="xpathparser.html#asterisknametest" class="tsd-kind-icon">ASTERISKNAMETEST</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static">
+								<a href="xpathparser.html#at" class="tsd-kind-icon">AT</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static">
+								<a href="xpathparser.html#axisname" class="tsd-kind-icon">AXISNAME</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static">
+								<a href="xpathparser.html#bar" class="tsd-kind-icon">BAR</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static">
+								<a href="xpathparser.html#comma" class="tsd-kind-icon">COMMA</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static">
+								<a href="xpathparser.html#div" class="tsd-kind-icon">DIV</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static">
+								<a href="xpathparser.html#dollar" class="tsd-kind-icon">DOLLAR</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static">
+								<a href="xpathparser.html#dot" class="tsd-kind-icon">DOT</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static">
+								<a href="xpathparser.html#doublecolon" class="tsd-kind-icon">DOUBLECOLON</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static">
+								<a href="xpathparser.html#doubledot" class="tsd-kind-icon">DOUBLEDOT</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static">
+								<a href="xpathparser.html#doubleslash" class="tsd-kind-icon">DOUBLESLASH</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static">
+								<a href="xpathparser.html#equals" class="tsd-kind-icon">EQUALS</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static">
+								<a href="xpathparser.html#functionname" class="tsd-kind-icon">FUNCTIONNAME</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static">
+								<a href="xpathparser.html#greaterthan" class="tsd-kind-icon">GREATERTHAN</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static">
+								<a href="xpathparser.html#greaterthanorequal" class="tsd-kind-icon">GREATERTHANOREQUAL</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static">
+								<a href="xpathparser.html#leftbracket" class="tsd-kind-icon">LEFTBRACKET</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static">
+								<a href="xpathparser.html#leftparenthesis" class="tsd-kind-icon">LEFTPARENTHESIS</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static">
+								<a href="xpathparser.html#lessthan" class="tsd-kind-icon">LESSTHAN</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static">
+								<a href="xpathparser.html#lessthanorequal" class="tsd-kind-icon">LESSTHANOREQUAL</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static">
+								<a href="xpathparser.html#literal" class="tsd-kind-icon">LITERAL</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static">
+								<a href="xpathparser.html#minus" class="tsd-kind-icon">MINUS</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static">
+								<a href="xpathparser.html#mod" class="tsd-kind-icon">MOD</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static">
+								<a href="xpathparser.html#multiplyoperator" class="tsd-kind-icon">MULTIPLYOPERATOR</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static">
+								<a href="xpathparser.html#ncnamecolonasterisk" class="tsd-kind-icon">NCNAMECOLONASTERISK</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static">
+								<a href="xpathparser.html#nodetype" class="tsd-kind-icon">NODETYPE</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static">
+								<a href="xpathparser.html#notequal" class="tsd-kind-icon">NOTEQUAL</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static">
+								<a href="xpathparser.html#number" class="tsd-kind-icon">NUMBER</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static">
+								<a href="xpathparser.html#or" class="tsd-kind-icon">OR</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static">
+								<a href="xpathparser.html#plus" class="tsd-kind-icon">PLUS</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static">
+								<a href="xpathparser.html#processinginstructionwithliteral" class="tsd-kind-icon">PROCESSINGINSTRUCTIONWITHLITERAL</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static">
+								<a href="xpathparser.html#qname" class="tsd-kind-icon">QNAME</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static">
+								<a href="xpathparser.html#reduce" class="tsd-kind-icon">REDUCE</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static">
+								<a href="xpathparser.html#rightbracket" class="tsd-kind-icon">RIGHTBRACKET</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static">
+								<a href="xpathparser.html#rightparenthesis" class="tsd-kind-icon">RIGHTPARENTHESIS</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static">
+								<a href="xpathparser.html#shift" class="tsd-kind-icon">SHIFT</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static">
+								<a href="xpathparser.html#slash" class="tsd-kind-icon">SLASH</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static">
+								<a href="xpathparser.html#actiontable" class="tsd-kind-icon">action<wbr>Table</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static">
+								<a href="xpathparser.html#actiontablenumber" class="tsd-kind-icon">action<wbr>Table<wbr>Number</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static">
+								<a href="xpathparser.html#gototable" class="tsd-kind-icon">goto<wbr>Table</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static">
+								<a href="xpathparser.html#productions" class="tsd-kind-icon">productions</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="xpathparser.html#parse" class="tsd-kind-icon">parse</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="xpathparser.html#tokenize" class="tsd-kind-icon">tokenize</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="after-current">
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-method tsd-parent-kind-interface"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>
