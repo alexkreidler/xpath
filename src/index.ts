@@ -23,3 +23,6 @@ export {
   makeVariableResolver,
   parse
 } from './parse-api';
+
+export { PathExpr } from './path-expr';
+export { LocationPath } from './location-path';

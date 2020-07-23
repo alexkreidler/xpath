@@ -3,31 +3,33 @@ import { XPathContext } from './xpath-types';
 
 // tslint:disable:member-ordering
 
-export class NodeTest {
-  static NAMETESTANY = 0;
-  static NAMETESTPREFIXANY = 1;
-  static NAMETESTQNAME = 2;
-  static COMMENT = 3;
-  static TEXT = 4;
-  static PI = 5;
-  static NODE = 6;
+export enum NodeTestType {
+  NameTestAny,
+  NameTestPrefixAny,
+  NameTestQName,
+  Comment,
+  Text,
+  ProcessingInstruction,
+  Node
+}
 
-  static isNodeType(types: number[]) {
+export class NodeTest {
+  static isNodeType(types: NodeTestType[]) {
     return (n: Node) => {
       return types.includes(n.nodeType) || ((n as Attr).specified && types.includes(2)); // DOM4 support
     };
   }
 
   // create invariant node test for certain node types
-  static makeNodeTypeTest(type: number, nodeTypes: number[], stringVal: string): NodeTest {
-    return new class extends NodeTest {
+  static makeNodeTypeTest(type: NodeTestType, nodeTypes: NodeTestType[], stringVal: string): NodeTest {
+    return new (class extends NodeTest {
       constructor() {
         super(type);
       }
 
       matches = NodeTest.isNodeType(nodeTypes);
       toString = () => stringVal;
-    }();
+    })();
   }
 
   static hasPrefix(node: Node) {
@@ -65,7 +67,7 @@ export class NodeTest {
     prefix: string;
 
     constructor(prefix: string) {
-      super(NodeTest.NAMETESTPREFIXANY);
+      super(NodeTestType.NameTestPrefixAny);
 
       this.prefix = prefix;
     }
@@ -86,7 +88,7 @@ export class NodeTest {
     localName: string;
 
     constructor(name: string) {
-      super(NodeTest.NAMETESTQNAME);
+      super(NodeTestType.NameTestQName);
 
       const nameParts = name.split(':');
 
@@ -112,7 +114,7 @@ export class NodeTest {
     name: string;
 
     constructor(name: string) {
-      super(NodeTest.PI);
+      super(NodeTestType.ProcessingInstruction);
 
       this.name = name;
     }
@@ -128,20 +130,20 @@ export class NodeTest {
 
   // elements, attributes, namespaces
   static nameTestAny = NodeTest.makeNodeTypeTest(
-    NodeTest.NAMETESTANY,
+    NodeTestType.NameTestAny,
     [1, 2, XPathNamespace.XPATH_NAMESPACE_NODE],
     '*'
   );
   // text, cdata
-  static textTest = NodeTest.makeNodeTypeTest(NodeTest.TEXT, [3, 4], 'text()');
-  static commentTest = NodeTest.makeNodeTypeTest(NodeTest.COMMENT, [8], 'comment()');
+  static textTest = NodeTest.makeNodeTypeTest(NodeTestType.Text, [3, 4], 'text()');
+  static commentTest = NodeTest.makeNodeTypeTest(NodeTestType.Comment, [8], 'comment()');
   // elements, attributes, text, cdata, PIs, comments, document nodes
-  static nodeTest = NodeTest.makeNodeTypeTest(NodeTest.NODE, [1, 2, 3, 4, 7, 8, 9], 'node()');
-  static anyPiTest = NodeTest.makeNodeTypeTest(NodeTest.PI, [7], 'processing-instruction()');
+  static nodeTest = NodeTest.makeNodeTypeTest(NodeTestType.Node, [1, 2, 3, 4, 7, 8, 9], 'node()');
+  static anyPiTest = NodeTest.makeNodeTypeTest(NodeTestType.ProcessingInstruction, [7], 'processing-instruction()');
 
-  type: number;
+  type: NodeTestType;
 
-  constructor(type: number) {
+  constructor(type: NodeTestType) {
     this.type = type;
   }
 
