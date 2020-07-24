@@ -1,6 +1,22 @@
 import { NodeTest } from './node-test';
 import { Expression } from './xpath-types';
 
+export enum StepTypes {
+  Ancestor,
+  AncestorOrSelf,
+  Attribute,
+  Child,
+  Descendant,
+  DescendantOrSelf,
+  Following,
+  FollowingSibling,
+  Namespace,
+  Parent,
+  Preceding,
+  PrecedingSibling,
+  Self
+}
+
 export class Step {
   static ANCESTOR = 0;
   static ANCESTORORSELF = 1;
@@ -30,12 +46,9 @@ export class Step {
     [Step.PRECEDING, 'preceding'],
     [Step.PRECEDINGSIBLING, 'preceding-sibling'],
     [Step.SELF, 'self']
-  ] as Array<[number, string]>).reduce(
-    (acc, x) => {
-      return (acc[x[0]] = x[1]), acc;
-    },
-    {} as { [key: number]: string }
-  );
+  ] as Array<[number, string]>).reduce((acc, x) => {
+    return (acc[x[0]] = x[1]), acc;
+  }, {} as { [key: number]: string });
 
   static predicateString = (e: Expression) => `[${e.toString()}]`;
   static predicatesString = (es: Expression[]) => es.map(Step.predicateString).join('');
