@@ -1,6 +1,6 @@
 import { XML_NAMESPACE_URI, XMLNS_NAMESPACE_URI } from './consts';
 import { LocationPath } from './location-path';
-import { Step } from './step';
+import { Step, StepTypes } from './step';
 import { isAttribute, isDocument, isElement } from './utils/types';
 import { XPathNamespace } from './xpath-namespace';
 import { Expression, XNodeSet, XNumber, XPathContext, XString } from './xpath-types';
@@ -27,7 +27,7 @@ export class PathExpr extends Expression {
     xpc.contextNode = node;
 
     switch (step.axis) {
-      case Step.ANCESTOR: {
+      case StepTypes.Ancestor: {
         // look at all the ancestor nodes
         if (xpc.contextNode === xpc.virtualRoot) {
           break;
@@ -49,7 +49,7 @@ export class PathExpr extends Expression {
         }
         break;
       }
-      case Step.ANCESTORORSELF: {
+      case StepTypes.AncestorOrSelf: {
         // look at all the ancestor nodes and the current node
         for (
           let m: Node | null = xpc.contextNode;
@@ -65,7 +65,7 @@ export class PathExpr extends Expression {
         }
         break;
       }
-      case Step.ATTRIBUTE: {
+      case StepTypes.Attribute: {
         // look at the attributes
         const nnm = (xpc.contextNode as Element).attributes;
         if (nnm != null) {
@@ -78,7 +78,7 @@ export class PathExpr extends Expression {
         }
         break;
       }
-      case Step.CHILD: {
+      case StepTypes.Child: {
         // look at all child elements
         for (let m: Node | null = xpc.contextNode.firstChild; m != null; m = m.nextSibling) {
           if (step.nodeTest.matches(m, xpc)) {
@@ -87,7 +87,7 @@ export class PathExpr extends Expression {
         }
         break;
       }
-      case Step.DESCENDANT: {
+      case StepTypes.Descendant: {
         // look at all descendant nodes
         const st: Array<Node | null> = [xpc.contextNode.firstChild];
         while (st.length > 0) {
@@ -105,7 +105,7 @@ export class PathExpr extends Expression {
         }
         break;
       }
-      case Step.DESCENDANTORSELF: {
+      case StepTypes.DescendantOrSelf: {
         // look at self
         if (step.nodeTest.matches(xpc.contextNode, xpc)) {
           newNodes.push(xpc.contextNode);
@@ -127,7 +127,7 @@ export class PathExpr extends Expression {
         }
         break;
       }
-      case Step.FOLLOWING: {
+      case StepTypes.Following: {
         if (xpc.contextNode === xpc.virtualRoot) {
           break;
         }
@@ -142,7 +142,7 @@ export class PathExpr extends Expression {
 
         break;
       }
-      case Step.FOLLOWINGSIBLING: {
+      case StepTypes.FollowingSibling: {
         if (xpc.contextNode === xpc.virtualRoot) {
           break;
         }
@@ -153,7 +153,7 @@ export class PathExpr extends Expression {
         }
         break;
       }
-      case Step.NAMESPACE: {
+      case StepTypes.Namespace: {
         const n: { [name: string]: string } = {};
         if (isElement(xpc.contextNode)) {
           n.xml = XML_NAMESPACE_URI;
@@ -185,7 +185,7 @@ export class PathExpr extends Expression {
         }
         break;
       }
-      case Step.PARENT: {
+      case StepTypes.Parent: {
         let m: Node | null = null;
         if (xpc.contextNode !== xpc.virtualRoot) {
           if (isAttribute(xpc.contextNode)) {
@@ -199,7 +199,7 @@ export class PathExpr extends Expression {
         }
         break;
       }
-      case Step.PRECEDING: {
+      case StepTypes.Preceding: {
         if (xpc.contextNode === xpc.virtualRoot) {
           break;
         }
@@ -214,7 +214,7 @@ export class PathExpr extends Expression {
 
         break;
       }
-      case Step.PRECEDINGSIBLING: {
+      case StepTypes.PrecedingSibling: {
         if (xpc.contextNode === xpc.virtualRoot) {
           break;
         }
@@ -225,7 +225,7 @@ export class PathExpr extends Expression {
         }
         break;
       }
-      case Step.SELF: {
+      case StepTypes.Self: {
         if (step.nodeTest.matches(xpc.contextNode, xpc)) {
           newNodes.push(xpc.contextNode);
         }

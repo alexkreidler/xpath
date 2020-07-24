@@ -17,7 +17,7 @@ import { OrOperation } from './operations/or-operation';
 import { PlusOperation } from './operations/plus-operation';
 import { UnaryMinusOperation } from './operations/unary-minus-operation';
 import { PathExpr } from './path-expr';
-import { Step } from './step';
+import { Step, StepTypes } from './step';
 import { isLetter, isNCNameChar } from './utils/character';
 import { VariableReference } from './variable-reference';
 import { XPath } from './xpath';
@@ -533,7 +533,7 @@ export class XPathParser {
     };
     this.reduceActions[28] = (rhs) => {
       rhs[0].locationPath = rhs[2];
-      rhs[0].locationPath.steps.unshift(new Step(Step.DESCENDANTORSELF, NodeTest.nodeTest, []));
+      rhs[0].locationPath.steps.unshift(new Step(StepTypes.DescendantOrSelf, NodeTest.nodeTest, []));
       return rhs[0];
     };
     this.reduceActions[29] = (rhs) => {
@@ -590,13 +590,13 @@ export class XPathParser {
       return new Step(rhs[0], rhs[1], []);
     };
     this.reduceActions[50] = (rhs) => {
-      return new Step(Step.CHILD, rhs[0], []);
+      return new Step(StepTypes.Child, rhs[0], []);
     };
     this.reduceActions[51] = (rhs) => {
       return new Step(rhs[0], rhs[1], rhs[2]);
     };
     this.reduceActions[52] = (rhs) => {
-      return new Step(Step.CHILD, rhs[0], rhs[1]);
+      return new Step(StepTypes.Child, rhs[0], rhs[1]);
     };
     this.reduceActions[54] = (rhs) => {
       return [rhs[0]];
@@ -607,36 +607,36 @@ export class XPathParser {
     };
     this.reduceActions[56] = (rhs) => {
       if (rhs[0] === 'ancestor') {
-        return Step.ANCESTOR;
+        return StepTypes.Ancestor;
       } else if (rhs[0] === 'ancestor-or-self') {
-        return Step.ANCESTORORSELF;
+        return StepTypes.AncestorOrSelf;
       } else if (rhs[0] === 'attribute') {
-        return Step.ATTRIBUTE;
+        return StepTypes.Attribute;
       } else if (rhs[0] === 'child') {
-        return Step.CHILD;
+        return StepTypes.Child;
       } else if (rhs[0] === 'descendant') {
-        return Step.DESCENDANT;
+        return StepTypes.Descendant;
       } else if (rhs[0] === 'descendant-or-self') {
-        return Step.DESCENDANTORSELF;
+        return StepTypes.DescendantOrSelf;
       } else if (rhs[0] === 'following') {
-        return Step.FOLLOWING;
+        return StepTypes.Following;
       } else if (rhs[0] === 'following-sibling') {
-        return Step.FOLLOWINGSIBLING;
+        return StepTypes.FollowingSibling;
       } else if (rhs[0] === 'namespace') {
-        return Step.NAMESPACE;
+        return StepTypes.Namespace;
       } else if (rhs[0] === 'parent') {
-        return Step.PARENT;
+        return StepTypes.Parent;
       } else if (rhs[0] === 'preceding') {
-        return Step.PRECEDING;
+        return StepTypes.Preceding;
       } else if (rhs[0] === 'preceding-sibling') {
-        return Step.PRECEDINGSIBLING;
+        return StepTypes.PrecedingSibling;
       } else if (rhs[0] === 'self') {
-        return Step.SELF;
+        return StepTypes.Self;
       }
       return -1;
     };
     this.reduceActions[57] = (_rhs) => {
-      return Step.ATTRIBUTE;
+      return StepTypes.Attribute;
     };
     this.reduceActions[59] = (rhs) => {
       if (rhs[0] === 'comment') {
@@ -658,19 +658,19 @@ export class XPathParser {
     };
     this.reduceActions[63] = (rhs) => {
       rhs[1].absolute = true;
-      rhs[1].steps.unshift(new Step(Step.DESCENDANTORSELF, NodeTest.nodeTest, []));
+      rhs[1].steps.unshift(new Step(StepTypes.DescendantOrSelf, NodeTest.nodeTest, []));
       return rhs[1];
     };
     this.reduceActions[64] = (rhs) => {
-      rhs[0].steps.push(new Step(Step.DESCENDANTORSELF, NodeTest.nodeTest, []));
+      rhs[0].steps.push(new Step(StepTypes.DescendantOrSelf, NodeTest.nodeTest, []));
       rhs[0].steps.push(rhs[2]);
       return rhs[0];
     };
     this.reduceActions[65] = (_rhs) => {
-      return new Step(Step.SELF, NodeTest.nodeTest, []);
+      return new Step(StepTypes.Self, NodeTest.nodeTest, []);
     };
     this.reduceActions[66] = (_rhs) => {
-      return new Step(Step.PARENT, NodeTest.nodeTest, []);
+      return new Step(StepTypes.Parent, NodeTest.nodeTest, []);
     };
     this.reduceActions[67] = (rhs) => {
       return new VariableReference(rhs[1]);

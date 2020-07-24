@@ -2,6 +2,7 @@ import { NodeTest } from './node-test';
 import { Expression } from './xpath-types';
 
 export enum StepTypes {
+  // 0
   Ancestor,
   AncestorOrSelf,
   Attribute,
@@ -14,39 +15,25 @@ export enum StepTypes {
   Parent,
   Preceding,
   PrecedingSibling,
-  Self
+  Self //12
 }
 
 export class Step {
-  static ANCESTOR = 0;
-  static ANCESTORORSELF = 1;
-  static ATTRIBUTE = 2;
-  static CHILD = 3;
-  static DESCENDANT = 4;
-  static DESCENDANTORSELF = 5;
-  static FOLLOWING = 6;
-  static FOLLOWINGSIBLING = 7;
-  static NAMESPACE = 8;
-  static PARENT = 9;
-  static PRECEDING = 10;
-  static PRECEDINGSIBLING = 11;
-  static SELF = 12;
-
   static STEPNAMES = ([
-    [Step.ANCESTOR, 'ancestor'],
-    [Step.ANCESTORORSELF, 'ancestor-or-self'],
-    [Step.ATTRIBUTE, 'attribute'],
-    [Step.CHILD, 'child'],
-    [Step.DESCENDANT, 'descendant'],
-    [Step.DESCENDANTORSELF, 'descendant-or-self'],
-    [Step.FOLLOWING, 'following'],
-    [Step.FOLLOWINGSIBLING, 'following-sibling'],
-    [Step.NAMESPACE, 'namespace'],
-    [Step.PARENT, 'parent'],
-    [Step.PRECEDING, 'preceding'],
-    [Step.PRECEDINGSIBLING, 'preceding-sibling'],
-    [Step.SELF, 'self']
-  ] as Array<[number, string]>).reduce((acc, x) => {
+    [StepTypes.Ancestor, 'ancestor'],
+    [StepTypes.AncestorOrSelf, 'ancestor-or-self'],
+    [StepTypes.Attribute, 'attribute'],
+    [StepTypes.Child, 'child'],
+    [StepTypes.Descendant, 'descendant'],
+    [StepTypes.DescendantOrSelf, 'descendant-or-self'],
+    [StepTypes.Following, 'following'],
+    [StepTypes.FollowingSibling, 'following-sibling'],
+    [StepTypes.Namespace, 'namespace'],
+    [StepTypes.Parent, 'parent'],
+    [StepTypes.Preceding, 'preceding'],
+    [StepTypes.PrecedingSibling, 'preceding-sibling'],
+    [StepTypes.Self, 'self']
+  ] as [StepTypes, string][]).reduce((acc, x) => {
     return (acc[x[0]] = x[1]), acc;
   }, {} as { [key: number]: string });
 
