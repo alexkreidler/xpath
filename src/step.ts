@@ -1,6 +1,8 @@
 import { NodeTest } from './node-test';
 import { Expression } from './xpath-types';
 
+// If we were to consolidate the names and the enum
+// we would not support directly passing numbers
 export enum StepTypes {
   // 0
   Ancestor,
@@ -18,6 +20,14 @@ export enum StepTypes {
   Self //12
 }
 
+// @ts-ignore
+// StepTypes.prototype.toString = function () {
+//   console.log('in toString');
+//   console.log(this);
+
+//   return Step.STEPNAMES[this];
+// };
+
 export class Step {
   static STEPNAMES = ([
     [StepTypes.Ancestor, 'ancestor'],
@@ -33,18 +43,18 @@ export class Step {
     [StepTypes.Preceding, 'preceding'],
     [StepTypes.PrecedingSibling, 'preceding-sibling'],
     [StepTypes.Self, 'self']
-  ] as [StepTypes, string][]).reduce((acc, x) => {
+  ] as [StepTypes, string][]).reduce((acc: any, x) => {
     return (acc[x[0]] = x[1]), acc;
-  }, {} as { [key: number]: string });
+  }, {} as { [key in StepTypes]: string });
 
   static predicateString = (e: Expression) => `[${e.toString()}]`;
   static predicatesString = (es: Expression[]) => es.map(Step.predicateString).join('');
 
-  axis: number;
+  axis: StepTypes;
   nodeTest: NodeTest;
   predicates: Expression[];
 
-  constructor(axis: number, nodetest: NodeTest, preds: Expression[]) {
+  constructor(axis: StepTypes, nodetest: NodeTest, preds: Expression[]) {
     this.axis = axis;
     this.nodeTest = nodetest;
     this.predicates = preds;
