@@ -2,8 +2,8 @@ export { XPath } from './xpath';
 export { XPathParser } from './xpath-parser';
 export { XPathResultImpl as XPathResult } from './xpath-result-impl';
 
-export { Step } from './step';
-export { NodeTest } from './node-test';
+export { Step, AxisType } from './step';
+export { NodeTest, NodeTestType } from './node-test';
 export { BarOperation } from './operations/bar-operation';
 
 export { NamespaceResolverImpl as NamespaceResolver } from './namespace-resolver';

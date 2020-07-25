@@ -17,7 +17,7 @@ import { OrOperation } from './operations/or-operation';
 import { PlusOperation } from './operations/plus-operation';
 import { UnaryMinusOperation } from './operations/unary-minus-operation';
 import { PathExpr } from './path-expr';
-import { Step, StepTypes } from './step';
+import { Step, AxisType } from './step';
 import { isLetter, isNCNameChar } from './utils/character';
 import { VariableReference } from './variable-reference';
 import { XPath } from './xpath';
@@ -533,7 +533,7 @@ export class XPathParser {
     };
     this.reduceActions[28] = (rhs) => {
       rhs[0].locationPath = rhs[2];
-      rhs[0].locationPath.steps.unshift(new Step(StepTypes.DescendantOrSelf, NodeTest.nodeTest, []));
+      rhs[0].locationPath.steps.unshift(new Step(AxisType.DescendantOrSelf, NodeTest.nodeTest, []));
       return rhs[0];
     };
     this.reduceActions[29] = (rhs) => {
@@ -590,13 +590,13 @@ export class XPathParser {
       return new Step(rhs[0], rhs[1], []);
     };
     this.reduceActions[50] = (rhs) => {
-      return new Step(StepTypes.Child, rhs[0], []);
+      return new Step(AxisType.Child, rhs[0], []);
     };
     this.reduceActions[51] = (rhs) => {
       return new Step(rhs[0], rhs[1], rhs[2]);
     };
     this.reduceActions[52] = (rhs) => {
-      return new Step(StepTypes.Child, rhs[0], rhs[1]);
+      return new Step(AxisType.Child, rhs[0], rhs[1]);
     };
     this.reduceActions[54] = (rhs) => {
       return [rhs[0]];
@@ -607,36 +607,36 @@ export class XPathParser {
     };
     this.reduceActions[56] = (rhs) => {
       if (rhs[0] === 'ancestor') {
-        return StepTypes.Ancestor;
+        return AxisType.Ancestor;
       } else if (rhs[0] === 'ancestor-or-self') {
-        return StepTypes.AncestorOrSelf;
+        return AxisType.AncestorOrSelf;
       } else if (rhs[0] === 'attribute') {
-        return StepTypes.Attribute;
+        return AxisType.Attribute;
       } else if (rhs[0] === 'child') {
-        return StepTypes.Child;
+        return AxisType.Child;
       } else if (rhs[0] === 'descendant') {
-        return StepTypes.Descendant;
+        return AxisType.Descendant;
       } else if (rhs[0] === 'descendant-or-self') {
-        return StepTypes.DescendantOrSelf;
+        return AxisType.DescendantOrSelf;
       } else if (rhs[0] === 'following') {
-        return StepTypes.Following;
+        return AxisType.Following;
       } else if (rhs[0] === 'following-sibling') {
-        return StepTypes.FollowingSibling;
+        return AxisType.FollowingSibling;
       } else if (rhs[0] === 'namespace') {
-        return StepTypes.Namespace;
+        return AxisType.Namespace;
       } else if (rhs[0] === 'parent') {
-        return StepTypes.Parent;
+        return AxisType.Parent;
       } else if (rhs[0] === 'preceding') {
-        return StepTypes.Preceding;
+        return AxisType.Preceding;
       } else if (rhs[0] === 'preceding-sibling') {
-        return StepTypes.PrecedingSibling;
+        return AxisType.PrecedingSibling;
       } else if (rhs[0] === 'self') {
-        return StepTypes.Self;
+        return AxisType.Self;
       }
       return -1;
     };
     this.reduceActions[57] = (_rhs) => {
-      return StepTypes.Attribute;
+      return AxisType.Attribute;
     };
     this.reduceActions[59] = (rhs) => {
       if (rhs[0] === 'comment') {
@@ -658,19 +658,19 @@ export class XPathParser {
     };
     this.reduceActions[63] = (rhs) => {
       rhs[1].absolute = true;
-      rhs[1].steps.unshift(new Step(StepTypes.DescendantOrSelf, NodeTest.nodeTest, []));
+      rhs[1].steps.unshift(new Step(AxisType.DescendantOrSelf, NodeTest.nodeTest, []));
       return rhs[1];
     };
     this.reduceActions[64] = (rhs) => {
-      rhs[0].steps.push(new Step(StepTypes.DescendantOrSelf, NodeTest.nodeTest, []));
+      rhs[0].steps.push(new Step(AxisType.DescendantOrSelf, NodeTest.nodeTest, []));
       rhs[0].steps.push(rhs[2]);
       return rhs[0];
     };
     this.reduceActions[65] = (_rhs) => {
-      return new Step(StepTypes.Self, NodeTest.nodeTest, []);
+      return new Step(AxisType.Self, NodeTest.nodeTest, []);
     };
     this.reduceActions[66] = (_rhs) => {
-      return new Step(StepTypes.Parent, NodeTest.nodeTest, []);
+      return new Step(AxisType.Parent, NodeTest.nodeTest, []);
     };
     this.reduceActions[67] = (rhs) => {
       return new VariableReference(rhs[1]);
